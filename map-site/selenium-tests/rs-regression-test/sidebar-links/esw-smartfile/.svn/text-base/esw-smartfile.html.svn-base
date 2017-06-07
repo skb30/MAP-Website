@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<tr>
+	<td>open</td>
+	<td>/map_site/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ESW-SMARTTEST</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> All Regressions for ESW-SMARTTEST* indicates a Point and Shoot (PnS) column. Release - Regression Regression Date/Time *Total *Passed *Failed % Passed OS - Version LPAR SubSytem *MAP Settings*FTP 771 - 1 2013-02-14 7 7 0 100% z/OS - 1.13 SYSQ N/A Display FTP 780 - 2 2013-02-20 7 6 1 85% z/OS - 1.13 SYSQ N/A Display FTP 790 - 1 2013-04-18 8 8 0 100% z/OS - 1.13 SYSQ N/A Display FTP 790 - 2 2013-05-01 8 8 0 100% z/OS - 1.13 SYSQ N/A Display FTP <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> MAP Settings for ESW-SMARTTEST 771 Regression 1 Using Configuration Settings from: D:/Eclipse_projects/MAP/ESW-SMARTTEST/mainframe/suite/run-settings.ini <br /><br />KeyValue<br />AKRASMQAL.PHX.ESWAUTO.ASM.AKR<br />AKRCOBQAL.PHX.ESWAUTO.COB.AKR<br />AKRPLIQAL.PHX.ESWAUTO.PLI.AKR<br />AUTesw<br />BuildInfoRelease R310 created on 15 Jul 2011 at 11:25:50<br />CICSApplidT42PHXQ1<br />ClistQAL.PHX.ESWAUTO.CLIST<br />CntlLibQAL.PHX.ESWAUTO.CNTL<br />CurrentFolderNamecurrent_data<br />DeleteProfileCMDQAL.phx.eswauto.CLIST(DELPROF)<br />DifferencesFolderNameDifferences<br />ExecQAL.PHX.ESW771.CLIST(VIASPROC) ADD(QAL.PHX.ESW771.CLIST)<br />ExpectedFolderNameexp_data<br />Hostsysq<br />IPHostnameMVSSYSQ<br />InitExpFile0<br />LOADASMQAL.PHX.ESWAUTO.ASM.LOADLIB<br />LOADCOBQAL.PHX.ESWAUTO.COB.LOADLIB<br />LOADPLIQAL.PHX.ESWAUTO.PLI.LOADLIB<br />LPARtsoq<br />Logon_ProcedureQAMHPROC<br />MapLibPathd:/Eclipse_projects/lib<br />PCOM_Profile_Nameqa057a<br />Passwordfeb2013<br />RegressionID2<br />ResultsFolderNameResults<br />SessionIDT<br />SessionID2C<br />TerminalEmulatorPComm<br />UserIDQa057b<br /><br />Suite Skip List<br />Suite Run List<br />batch <br /><br />cics <br /><br />misc <br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#table_cell_1 &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> ESW-SMARTTEST 771 1 Unknown * indicates a Point and Shoot (PnS) column.<br /> Elapsed SuiteScriptStatus Start Time End Time Run LogHistory batch r004 Passed Thu Feb 14 14:19:06 2013 Thu Feb 14 14:20:44 2013 0 Day(s). 0 Hour(s). 1 Min(s). 38 Sec(s). View View batch r005 Passed Thu Feb 14 14:20:44 2013 Thu Feb 14 14:21:44 2013 0 Day(s). 0 Hour(s). 1 Min(s). 0 Sec(s). View View batch r006 Passed Thu Feb 14 14:21:44 2013 Thu Feb 14 14:23:30 2013 0 Day(s). 0 Hour(s). 1 Min(s). 46 Sec(s). View View cics r007 Passed Thu Feb 14 14:23:30 2013 Thu Feb 14 14:27:31 2013 0 Day(s). 0 Hour(s). 4 Min(s). 1 Sec(s). View View cics r008 Passed Thu Feb 14 14:27:31 2013 Thu Feb 14 14:29:51 2013 0 Day(s). 0 Hour(s). 2 Min(s). 20 Sec(s). View View cics r009 Passed Thu Feb 14 14:29:51 2013 Thu Feb 14 14:35:54 2013 0 Day(s). 0 Hour(s). 6 Min(s). 3 Sec(s). View View misc r003 Passed Thu Feb 14 14:35:54 2013 Thu Feb 14 14:36:20 2013 0 Day(s). 0 Hour(s). 0 Min(s). 26 Sec(s). View View <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> R004 Run LogProductReleaseReg #SuiteBuildESW-SMARTTEST7711batchUnknown PASSEDRun Log for r004 Thu Feb 14 14:19:06 2013 ------- Test Case r004.pl.pl Started -------<br />*** 2013-02-14 14:19:06 'r004.pl' started ***<br /><br /> T <br />*** 2013-02-14 14:19:30 'r004.pl' 0 - Delete Profile Members Clist: QAL.phx.eswauto.CLIST(DELPROF) Passed ***<br />*** 2013-02-14 14:19:31 'r004.pl' 0 - verifyStringNotFoundOnPanel &quot;NOINTERCOM&quot; Passed ***<br />*** 2013-02-14 14:19:32 'r004.pl' 42 - findStringOnPanel &quot;ISRTSO&quot; Passed ***<br />*** JOB SUBMITTED ***<br />*** JOB ENDED ***<br />*** 2013-02-14 14:19:43 'r004.pl' 82 - findStringOnPanel &quot;14FEB2013&quot; Passed ***<br />*** 2013-02-14 14:19:44 'r004.pl' 96 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:44 'r004.pl' 99 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:46 'r004.pl' 138 - findStringOnPanel &quot;CLIST GENERATED&quot; Passed ***<br />*** 2013-02-14 14:19:46 'r004.pl' 145 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:51 'r004.pl' 166 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:51 'r004.pl' 170 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:51 'r004.pl' 173 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:51 'r004.pl' 175 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:52 'r004.pl' 185 - findStringOnPanel &quot;DEMONSTRATION OF: S0C7&quot; Passed ***<br />*** 2013-02-14 14:19:53 'r004.pl' 191 - findStringOnPanel &quot;SUCCESSFUL MEMORY UPDATE&quot; Passed ***<br />*** 2013-02-14 14:19:53 'r004.pl' 194 - findStringOnPanel &quot;DEMONSTRATION OF: S0C4&quot; Passed ***<br />*** 2013-02-14 14:19:53 'r004.pl' 196 - findStringOnPanel &quot;S0C4-DEMO&quot; Passed ***<br />*** 2013-02-14 14:19:54 'r004.pl' 203 - findStringOnPanel &quot;ASG2172I S0C4-INDEX=&quot; Passed ***<br />*** 2013-02-14 14:19:54 'r004.pl' 209 - findStringOnPanel &quot;ASG2172I S0C4-INDEX-INCREMENT=*INVALID*&quot; Passed ***<br />*** 2013-02-14 14:19:54 'r004.pl' 214 - findStringOnPanel &quot;ASG0443I 2 DATA MODS: 1 PARENT, FOUND FOR S0C4-INDEX-INCREMENT&quot; Passed ***<br />*** 2013-02-14 14:19:54 'r004.pl' 219 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:54 'r004.pl' 221 - pressKeys &quot;&quot; Passed ***<br />*** 2013-02-14 14:19:55 'r004.pl' 232 - findStringOnPanel &quot;PERFORM STEP-VALUE-SUBROUTINE&quot; Passed ***<br />*** 2013-02-14 14:19:55 'r004.pl' 237 - findStringOnPanel &quot;10 STEP-VALUE &quot; Passed ***<br />*** 2013-02-14 14:19:59 'r004.pl' 242 - findStringOnPanel &quot;ASG2163I STEP 4 OF 4 EXECUTED&quot; Passed ***<br />*** 2013-02-14 14:19:59 'r004.pl' 247 - findStringOnPanel &quot;STOPPED BY &quot;STEP OVER&quot; REQUEST&quot; Passed ***<br />*** 2013-02-14 14:19:59 'r004.pl' 252 - findStringOnPanel &quot;MOVE +0 TO STEP-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:00 'r004.pl' 257 - findStringOnPanel &quot;OPERANDS ON &quot; Passed ***<br />*** 2013-02-14 14:20:04 'r004.pl' 262 - findStringOnPanel &quot;ASG2172I STEP-VALUE=+13&quot; Passed ***<br />*** 2013-02-14 14:20:04 'r004.pl' 267 - findStringOnPanel &quot;DELAY TIME SET&quot; Passed ***<br />*** 2013-02-14 14:20:16 'r004.pl' 274 - findStringOnPanel &quot;ASG2172I STEP-VALUE=+0&quot; Passed ***<br />*** Delay time set to 15 seconds. Actual delay was 12 seconds.***<br />*** 2013-02-14 14:20:17 'r004.pl' 290 - findStringOnPanel &quot;STOPPED BY &quot;RUN &quot; Passed ***<br />*** 2013-02-14 14:20:17 'r004.pl' 291 - findStringOnPanel &quot;ASG2172I STEP-VALUE=+11&quot; Passed ***<br />*** 2013-02-14 14:20:17 'r004.pl' 295 - findStringOnPanel &quot;MOVE +2 TO STEP-SUB&quot; Passed ***<br />*** 2013-02-14 14:20:17 'r004.pl' 296 - findStringOnPanel &quot;ASG2172I STEP-SUB=+13&quot; Passed ***<br />*** 2013-02-14 14:20:17 'r004.pl' 301 - findStringOnPanel &quot;MOVE +3 TO STEP-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:17 'r004.pl' 302 - findStringOnPanel &quot;ASG2172I STEP-VALUE=+6&quot; Passed ***<br />*** 2013-02-14 14:20:23 'r004.pl' 309 - findStringOnPanel &quot;ASG2172I STEP-VALUE=+3&quot; Passed ***<br />*** 2013-02-14 14:20:23 'r004.pl' 314 - findStringOnPanel &quot;DEMONSTRATION OF: STOP&quot; Passed ***<br />*** 2013-02-14 14:20:24 'r004.pl' 316 - findStringOnPanel &quot;PERFORM STOP-BUILD-PAYEE-TABLE&quot; Passed ***<br />*** 2013-02-14 14:20:24 'r004.pl' 317 - findStringOnPanel &quot;STOPPED AFTER BREAK&quot; Passed ***<br />*** 2013-02-14 14:20:24 'r004.pl' 322 - findStringOnPanel &quot;ASG2324I ADDRESS STOP AT&quot; Passed ***<br />*** 2013-02-14 14:20:24 'r004.pl' 323 - findStringOnPanel &quot;FOR A LENGTH OF 11 HAS BEEN ASSIGNED&quot; Passed ***<br />*** 2013-02-14 14:20:24 'r004.pl' 329 - verifyPanelMask ListAddStop.txt Passed ***<br />*** 2013-02-14 14:20:25 'r004.pl' 334 - findStringOnPanel &quot;ADD STOP-PAY-AMOUNT (STOP-PAYEE) TO STOP-PAY-&quot; Passed ***<br />*** 2013-02-14 14:20:25 'r004.pl' 335 - findStringOnPanel &quot;STOPPED BEFORE ADDRESS MODIFIED&quot; Passed ***<br />*** 2013-02-14 14:20:25 'r004.pl' 341 - findStringOnPanel &quot;ADD STOP-PAY-AMOUNT (STOP-PAYEE) TO STOP-PAY-&quot; Passed ***<br />*** 2013-02-14 14:20:25 'r004.pl' 344 - findStringOnPanel &quot;ADD STOP-PAY-AMOUNT (STOP-PAYEE) TO STOP-PAY-&quot; Passed ***<br />*** 2013-02-14 14:20:26 'r004.pl' 349 - verifyPanel ListTrack.txt Passed ***<br />*** 2013-02-14 14:20:27 'r004.pl' 359 - verifyPanel StopFix.txt Passed ***<br />*** 2013-02-14 14:20:27 'r004.pl' 364 - findStringOnPanel &quot;ASG0443I 6 DATA REFS: 3 DEFS, 1 USE, 2 MODS, FOUND FOR FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:27 'r004.pl' 369 - findStringOnPanel &quot;MOVE +0 TO FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:27 'r004.pl' 374 - findStringOnPanel &quot;ASG0443I 2 DATA MODS FOUND FOR FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:28 'r004.pl' 378 - findStringOnPanel &quot;MOVE +0 TO FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:28 'r004.pl' 383 - findStringOnPanel &quot;ASG0443I 1 DATA USE FOUND FOR FIND-VALUE IN COND&quot; Passed ***<br />*** 2013-02-14 14:20:28 'r004.pl' 387 - findStringOnPanel &quot;MOVE +0 TO FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:28 'r004.pl' 392 - findStringOnPanel &quot;UNREFERENCED-SUBROUTINE. DEADCODE&quot; Passed ***<br />*** 2013-02-14 14:20:29 'r004.pl' 406 - findStringOnPanel &quot;MOVE +0 TO FIND-VALUE&quot; Passed ***<br />*** 2013-02-14 14:20:29 'r004.pl' 411 - verifyPanel FindValuebreak.txt Passed ***<br />*** 2013-02-14 14:20:29 'r004.pl' 415 - verifyPanel FindValuebreak2.txt Passed ***<br />*** 2013-02-14 14:20:30 'r004.pl' 420 - findStringOnPanel &quot;DEMONSTRATION OF: BACKTRACK&quot; Passed ***<br />*** 2013-02-14 14:20:30 'r004.pl' 426 - findStringOnPanel &quot;BACKTRACK ON&quot; Passed ***<br />*** 2013-02-14 14:20:30 'r004.pl' 435 - verifyPanel backflag.txt Passed ***<br />*** 2013-02-14 14:20:31 'r004.pl' 439 - verifyPanel backflagvalue.txt Passed ***<br />*** 2013-02-14 14:20:31 'r004.pl' 443 - verifyPanel backflagvalue2.txt Passed ***<br />*** 2013-02-14 14:20:34 'r004.pl' 447 - verifyPanel backflagvalue3.txt Passed ***<br />*** 2013-02-14 14:20:34 'r004.pl' 451 - verifyPanel backflagvalue4.txt Passed ***<br />*** 2013-02-14 14:20:35 'r004.pl' 459 - verifyPanel Nosource.txt Passed ***<br />*** 2013-02-14 14:20:35 'r004.pl' 464 - findStringOnPanel &quot;ASMVIEW ON&quot; Passed ***<br />*** 2013-02-14 14:20:36 'r004.pl' 469 - findStringOnPanel &quot;BREAK ON ENTRY TO A PROGRAM PGM: IEFBR14&quot; Passed ***<br />*** 2013-02-14 14:20:37 'r004.pl' 475 - verifyPanel IEFBR14Step.txt Passed ***<br />*** 2013-02-14 14:20:37 'r004.pl' 480 - verifyPanel Listtracking.txt Passed ***<br />*** 2013-02-14 14:20:38 'r004.pl' 485 - findStringOnPanel &quot;MOVE ZONED-ZERO TO RETURN-CODE&quot; Passed ***<br />*** 2013-02-14 14:20:38 'r004.pl' 486 - findStringOnPanel &quot;STOPPED BY STEP REQUEST&quot; Passed ***<br />*** 2013-02-14 14:20:38 'r004.pl' 491 - findStringOnPanel &quot;ASM ON&quot; Passed ***<br />*** 2013-02-14 14:20:40 'r004.pl' 496 - findStringOnPanel &quot;ASG2163I STEP 3 OF 3 EXECUTED&quot; Passed ***<br />*** 2013-02-14 14:20:40 'r004.pl' 501 - findStringOnPanel &quot;DEMONSTRATION OF: LOOP&quot; Passed ***<br />*** 2013-02-14 14:20:41 'r004.pl' 507 - verifyPanel ListCountDesc.txt Passed ***<br />*** 2013-02-14 14:20:41 'r004.pl' 512 - verifyPanel ListCountAsc.txt Passed ***<br />*** 2013-02-14 14:20:41 'r004.pl' 517 - verifyPanel ListCountDPara.txt Passed ***<br />*** 2013-02-14 14:20:41 'r004.pl' 522 - verifyPanel ListCountLine.txt Passed ***<br />*** 2013-02-14 14:20:43 'r004.pl' 531 - findStringOnPanel &quot;TEST SESSION CANCELLED&quot; Passed ***<br />*** 2013-02-14 14:20:44 'r004.pl' 534 - Ended with a status of: Passed ***<br />Thu Feb 14 14:20:44 2013 ------- Test Case r004.pl Ended. Elasped Time: 0 Day(s). 0 Hour(s). 1 Min(s). 38 Sec(s). ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Expected Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Expected Files List: <br /> backflag.txt backflagvalue.txt backflagvalue2.txt backflagvalue3.txt backflagvalue4.txt FindValuebreak.txt FindValuebreak2.txt IEFBR14Break.txt IEFBR14Step.txt ListAddStop.txt ListCountAsc.txt ListCountDesc.txt ListCountDPara.txt ListCountLine.txt ListTrack.txt Listtracking.txt Nosource.txt StopFix.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Current Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Current File List: <br /> backflag.txt backflagvalue.txt backflagvalue2.txt backflagvalue3.txt backflagvalue4.txt FindValuebreak.txt FindValuebreak2.txt IEFBR14Step.txt ListAddStop.txt ListCountAsc.txt ListCountDesc.txt ListCountDPara.txt ListCountLine.txt ListTrack.txt Listtracking.txt Nosource.txt StopFix.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Difference Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Differences File List: <br /> backflag.txt backflagvalue.txt backflagvalue2.txt backflagvalue3.txt backflagvalue4.txt FindValuebreak.txt FindValuebreak2.txt IEFBR14Step.txt ListAddStop.txt ListCountAsc.txt ListCountDesc.txt ListCountDPara.txt ListCountLine.txt ListTrack.txt Listtracking.txt Nosource.txt StopFix.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'0')])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> * indicates a Point and Shoot (PnS) column.<br /> Elapsed SuiteScriptStatus Start Time End Time Run LogHistory <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+
+</body>
+</html>

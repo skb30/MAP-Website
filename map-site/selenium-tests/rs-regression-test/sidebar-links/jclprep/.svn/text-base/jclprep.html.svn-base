@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<tr>
+	<td>open</td>
+	<td>/map_site/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=JCLprep</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> All Regressions for JCLprep* indicates a Point and Shoot (PnS) column. Release - Regression Regression Date/Time *Total *Passed *Failed % Passed OS - Version LPAR SubSytem *MAP Settings*FTP 710 - 1 2013-04-11 20 20 0 100% z/OS - 1.13 SYSQ N/A - Display FTP <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#table_cell_1 &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> JCLprep 710 1 Release R710 created on 15 March 2013 at 11:25:50 * indicates a Point and Shoot (PnS) column.<br /> Elapsed SuiteScriptStatus Start Time End Time Run LogHistory admin nmbrxef Passed Thu Apr 11 10:12:42 2013 Thu Apr 11 10:13:23 2013 0 Day(s). 0 Hour(s). 0 Min(s). 41 Sec(s). View View admin options Passed Thu Apr 11 10:13:23 2013 Thu Apr 11 10:13:30 2013 0 Day(s). 0 Hour(s). 0 Min(s). 7 Sec(s). View View admin prepare Passed Thu Apr 11 10:13:30 2013 Thu Apr 11 10:13:47 2013 0 Day(s). 0 Hour(s). 0 Min(s). 17 Sec(s). View View admin rules Passed Thu Apr 11 10:13:47 2013 Thu Apr 11 10:13:57 2013 0 Day(s). 0 Hour(s). 0 Min(s). 10 Sec(s). View View admin showkeys Passed Thu Apr 11 10:13:57 2013 Thu Apr 11 10:14:03 2013 0 Day(s). 0 Hour(s). 0 Min(s). 6 Sec(s). View View admin skeletons Passed Thu Apr 11 10:14:03 2013 Thu Apr 11 10:14:24 2013 0 Day(s). 0 Hour(s). 0 Min(s). 21 Sec(s). View View admin tsousers Passed Thu Apr 11 10:14:24 2013 Thu Apr 11 10:14:35 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View admin updatef Passed Thu Apr 11 10:14:35 2013 Thu Apr 11 10:14:42 2013 0 Day(s). 0 Hour(s). 0 Min(s). 7 Sec(s). View View admin uprules Passed Thu Apr 11 10:14:42 2013 Thu Apr 11 10:15:13 2013 0 Day(s). 0 Hour(s). 0 Min(s). 31 Sec(s). View View admin usagefile Passed Thu Apr 11 10:15:13 2013 Thu Apr 11 10:15:27 2013 0 Day(s). 0 Hour(s). 0 Min(s). 14 Sec(s). View View batch batchp Passed Thu Apr 11 10:15:27 2013 Thu Apr 11 10:15:40 2013 0 Day(s). 0 Hour(s). 0 Min(s). 13 Sec(s). View View editpanel jprp022 Passed Thu Apr 11 10:15:40 2013 Thu Apr 11 10:15:50 2013 0 Day(s). 0 Hour(s). 0 Min(s). 10 Sec(s). View View foreground jprp006 Passed Thu Apr 11 10:15:50 2013 Thu Apr 11 10:16:00 2013 0 Day(s). 0 Hour(s). 0 Min(s). 10 Sec(s). View View onlinedoc docpanel Passed Thu Apr 11 10:16:00 2013 Thu Apr 11 10:16:07 2013 0 Day(s). 0 Hour(s). 0 Min(s). 7 Sec(s). View View options addpanel Passed Thu Apr 11 10:16:07 2013 Thu Apr 11 10:16:14 2013 0 Day(s). 0 Hour(s). 0 Min(s). 7 Sec(s). View View options control Passed Thu Apr 11 10:16:14 2013 Thu Apr 11 10:16:36 2013 0 Day(s). 0 Hour(s). 0 Min(s). 22 Sec(s). View View options restore Passed Thu Apr 11 10:16:36 2013 Thu Apr 11 10:16:47 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View options rules Passed Thu Apr 11 10:16:47 2013 Thu Apr 11 10:16:48 2013 0 Day(s). 0 Hour(s). 0 Min(s). 1 Sec(s). View View options validpnl Passed Thu Apr 11 10:16:48 2013 Thu Apr 11 10:17:08 2013 0 Day(s). 0 Hour(s). 0 Min(s). 20 Sec(s). View View reports reports Passed Thu Apr 11 10:17:08 2013 Thu Apr 11 10:17:54 2013 0 Day(s). 0 Hour(s). 0 Min(s). 46 Sec(s). View View <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> NMBRXEF Run LogProductReleaseReg #SuiteBuildJCLprep7101adminRelease R710 created on 15 March 2013 at 11:25:50 PASSEDRun Log for nmbrxef Thu Apr 11 10:12:42 2013 ------- Test Case nmbrxef.pl.pl Started -------<br />*** 2013-04-11 10:12:43 'nmbrxef.pl' started ***<br /><br /> T <br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 34 - findStringOnPanel &quot;JPRP018&quot; Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 35 - verifyPanelMask jprp018a.txt Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 38 - findStringOnPanel &quot;JPRP027&quot; Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 39 - verifyPanelMask jprp027a.txt Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 42 - verifyPanel jprh061.txt Passed ***<br />*** 2013-04-11 10:13:13 'nmbrxef.pl' 44 - verifyPanel jprh061a.txt Passed ***<br />*** 2013-04-11 10:13:14 'nmbrxef.pl' 48 - findStringOnPanel &quot;JCLPREP PROGRAM TO NUMBER RULES&quot; Passed ***<br />*** JOB SUBMITTED ***<br />*** JOB ENDED ***<br />*** 2013-04-11 10:13:23 'nmbrxef.pl' 57 - Ended with a status of: Passed ***<br />Thu Apr 11 10:13:23 2013 ------- Test Case nmbrxef.pl Ended. Elasped Time: 0 Day(s). 0 Hour(s). 0 Min(s). 41 Sec(s). ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#table_cell_1 &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> NMBRXEF Run LogProductReleaseReg #SuiteBuildJCLprep7101adminRelease R710 created on 15 March 2013 at 11:25:50 PASSEDRun Log for nmbrxef Thu Apr 11 10:12:42 2013 ------- Test Case nmbrxef.pl.pl Started -------<br />*** 2013-04-11 10:12:43 'nmbrxef.pl' started ***<br /><br /> T <br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 34 - findStringOnPanel &quot;JPRP018&quot; Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 35 - verifyPanelMask jprp018a.txt Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 38 - findStringOnPanel &quot;JPRP027&quot; Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 39 - verifyPanelMask jprp027a.txt Passed ***<br />*** 2013-04-11 10:13:12 'nmbrxef.pl' 42 - verifyPanel jprh061.txt Passed ***<br />*** 2013-04-11 10:13:13 'nmbrxef.pl' 44 - verifyPanel jprh061a.txt Passed ***<br />*** 2013-04-11 10:13:14 'nmbrxef.pl' 48 - findStringOnPanel &quot;JCLPREP PROGRAM TO NUMBER RULES&quot; Passed ***<br />*** JOB SUBMITTED ***<br />*** JOB ENDED ***<br />*** 2013-04-11 10:13:23 'nmbrxef.pl' 57 - Ended with a status of: Passed ***<br />Thu Apr 11 10:13:23 2013 ------- Test Case nmbrxef.pl Ended. Elasped Time: 0 Day(s). 0 Hour(s). 0 Min(s). 41 Sec(s). ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Expected Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Expected Files List: <br /> jprh061.txt jprh061a.txt jprp018a.txt jprp027a.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Current Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Current File List: <br /> jprh061.txt jprh061a.txt jprp018a.txt jprp027a.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Difference Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Differences File List: <br /> jprh061.txt jprh061a.txt jprp018a.txt jprp027a.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> MAP Settings for JCLprep 710 Regression 1 usmghxjuliagr<br />: C:/eclipse-map/map/MGH/jclprep/mainframe/suite/run-settings.ini <br /><br /><br />KeyValue<br />AUTjclprep<br />BuildInfoRelease R710 created on 15 March 2013 at 11:25:50<br />COPYRIGHTCopyright (C) 2013 Allen Systems Group, Inc. All rights reserved<br />CurrentFolderNamecurrent_data<br />DifferencesFolderNameDifferences<br />ExpectedFolderNameexp_data<br />HostSYSQ<br />IPHostnameMVSSYSQ<br />InitExpFile1<br />IspfPrefJ710<br />IspflibISP<br />IspprofSYSQ.ISPF.ISPPROF<br />LPARtsoq<br />Logon_ProcedureQAMHPREP<br />MapLibPathc:/eclipse-map/LIB<br />PCOM_Profile_NameQA027A<br />PasswordAPR013<br />PreReleaseQAL.MGH.POP.JCP690<br />ProductJCLPREP<br />RegressionID2<br />RelHlqQAL.MGH.TAPE.JCP710<br />ReleaseR710<br />ResultsFolderNameResults<br />SessionIDT<br />TerminalEmulatorPComm<br />TestbucketQAL.MGH.JC.TESTBCKT<br />UserIDQA027B<br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br />Suite Skip List<br />Suite Run List<br />admin <br /><br />batch <br /><br />editpanel <br /><br />foreground <br /><br />onlinedoc <br /><br />options <br /><br />reports <br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+
+</body>
+</html>

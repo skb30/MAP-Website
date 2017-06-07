@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<tr>
+	<td>open</td>
+	<td>/map_site/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=INFO/X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> All Regressions for INFO/X* indicates a Point and Shoot (PnS) column. Release - Regression Regression Date/Time *Total *Passed *Failed % Passed OS - Version LPAR SubSytem *MAP Settings*FTP 300 - 11 2011-03-30 166 142 24 85% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 300 - 12 2011-06-29 186 153 33 82% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 1 2011-07-01 186 149 37 80% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 2 2011-09-14 188 144 44 76% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 3 2011-12-21 188 143 45 76% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 4 2012-01-06 188 146 42 77% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 5 2012-02-17 188 140 48 74% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 6 2012-03-30 185 175 10 94% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 7 2012-04-03 185 161 24 87% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 8 2012-05-30 184 166 18 90% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 9 2012-07-17 184 172 12 93% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 10 2012-07-20 188 162 26 86% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 11 2012-07-26 188 174 14 92% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 11 2012-08-08 188 175 13 93% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 11 2012-08-21 182 170 12 93% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 310 - 13 2012-09-21 182 166 16 91% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Display')])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> MAP Settings for INFO/X 310 Regression 3 No RTS data for this release. <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'188')])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> ProductReleaseRegressionBuild Info INFO/X3105Release R310 created on 9 Feb 2012 at 12:33:53 * indicates a Point and Shoot (PnS) column.<br /> Suite% Passed*Total*Passed*FailedNotes ADMINISTRATION 100% 11 11 0 FOLDERS 100% 3 3 0 MISC1 83% 12 10 2 NISSAN 33% 3 1 2 PRINTSETUP 72% 11 8 3 QUERY1 69% 13 9 4 REPORTS 58% 24 14 10 SETUP 65% 23 15 8 sort 33% 6 2 4 UPDATE1 75% 12 9 3 XREF1 70% 10 7 3 XREF_CICSGROUP1 100% 1 1 0 XREF_CICSTRANSACTION1 100% 5 5 0 XREF_DB2COLLECTIONID1 25% 4 1 3 XREF_DB2PACKAGE1 66% 3 2 1 XREF_DB2PLAN1 50% 2 1 1 XREF_DB2TABLE1 66% 3 2 1 XREF_DSNAME1 100% 6 6 0 XREF_JOB 80% 10 8 2 XREF_JOB2 100% 9 9 0 XREF_PGM1 100% 8 8 0 XREF_PROC1 80% 5 4 1 XREF_SYSOUT1 100% 4 4 0 <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> ProductReleaseRegressionBuild Info INFO/X3105Release R310 created on 9 Feb 2012 at 12:33:53 Suite: ADMINISTRATION* indicates a Point and Shoot (PnS) column. *ScriptStatusStartEndElapsed*Run Log*History i10900 Passed Fri Feb 17 17:30:03 2012 Fri Feb 17 17:30:50 2012 View View I715736 Passed Fri Feb 17 17:30:50 2012 Fri Feb 17 17:31:04 2012 View View ID14009 Passed Fri Feb 17 17:31:04 2012 Fri Feb 17 17:31:15 2012 View View IH11045 Passed Fri Feb 17 17:31:15 2012 Fri Feb 17 17:32:00 2012 View View IH12133 Passed Fri Feb 17 17:32:00 2012 Fri Feb 17 17:32:13 2012 View View IH25115 Passed Fri Feb 17 17:32:13 2012 Fri Feb 17 17:32:37 2012 View View IH3A058 Passed Fri Feb 17 17:32:37 2012 Fri Feb 17 17:32:47 2012 View View IH4A016 Passed Fri Feb 17 17:32:47 2012 Fri Feb 17 17:33:01 2012 View View piadm001 Passed Fri Feb 17 17:33:01 2012 Fri Feb 17 17:33:19 2012 View View piadm002 Passed Fri Feb 17 17:33:19 2012 Fri Feb 17 17:34:00 2012 View View piadm003 Passed Fri Feb 17 17:34:00 2012 Fri Feb 17 17:34:18 2012 View View <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> I10900 Run LogProductReleaseReg #SuiteBuildINFO/X3105ADMINISTRATIONRelease R310 created on 9 Feb 2012 at 12:33:53 PASSEDRun Log for i10900 Fri Feb 17 17:30:03 2012 ------- Test Case i10900.pl.pl Started -------<br />*** 2012-02-17 17:30:03 i10900.pl started ***<br /><br /> T <br />*** 2012-02-17 17:30:46 i10900.pl 35 - navigate2Panel Passed ***<br />*** 2012-02-17 17:30:47 i10900.pl 39 - findStringOnPanel &quot;D0DPMAI0&quot; Passed ***<br />*** 2012-02-17 17:30:48 i10900.pl 41 - findStringOnPanel &quot;D0SPDIA1&quot; Passed ***<br />*** 2012-02-17 17:30:48 i10900.pl 43 - findStringOnPanel &quot;D0SPDIA8&quot; Passed ***<br />*** 2012-02-17 17:30:48 i10900.pl 47 - verifyPanel D0SPDIA1.txt Passed ***<br />*** 2012-02-17 17:30:50 i10900.pl 52 - Ended with a status of: Passed ***<br />Fri Feb 17 17:30:50 2012 ------- Test Case i10900.pl Ended. Elasped Time: 0 Days. 0 Hours. 0 Min. 47 Sec. ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Expected Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Expected Files List: <br /> D0SPDIA1.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Current Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Current File List: <br /> D0SPDIA1.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Difference Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Differences File List: <br /> D0SPDIA1.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Home&nbsp;&nbsp;<br /> <br /> History List for: i10900 ScriptProductReleaseSuiteStartEndRun LogStatus i10900 INFO/X 300 ADMINISTRATION Wed Mar 30 17:51:52 2011 Wed Mar 30 17:52:26 2011 View Passed i10900 INFO/X 300 ADMINISTRATION Wed Jun 29 16:19:04 2011 Wed Jun 29 16:19:37 2011 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Jul 1 15:47:56 2011 Fri Jul 1 15:48:34 2011 View Passed i10900 INFO/X 310 ADMINISTRATION Wed Sep 14 16:30:22 2011 Wed Sep 14 16:30:53 2011 View Passed i10900 INFO/X 310 ADMINISTRATION Wed Dec 21 16:54:25 2011 Wed Dec 21 16:54:57 2011 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Jan 6 14:59:36 2012 Fri Jan 6 15:00:13 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Feb 17 17:30:03 2012 Fri Feb 17 17:30:50 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Mar 30 13:42:39 2012 Fri Mar 30 13:43:08 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Tue Apr 3 14:43:59 2012 Tue Apr 3 14:44:30 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Wed May 30 13:36:41 2012 Wed May 30 13:37:08 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Tue Jul 17 17:42:30 2012 Tue Jul 17 17:43:07 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Jul 20 19:30:53 2012 Fri Jul 20 19:31:28 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Thu Jul 26 16:49:22 2012 Thu Jul 26 16:49:58 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Wed Aug 8 13:11:38 2012 Wed Aug 8 13:12:14 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Tue Aug 21 16:20:58 2012 Tue Aug 21 16:21:37 2012 View Passed i10900 INFO/X 310 ADMINISTRATION Fri Sep 21 13:51:17 2012 Fri Sep 21 13:51:55 2012 View Failed <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> I10900 Run LogProductReleaseReg #SuiteBuildINFO/X30011ADMINISTRATIONRelease $PR300 created on 10 Mar 2011 at 17:08:41 PASSEDRun Log for i10900 Wed Mar 30 17:51:52 2011 ------- Test Case i10900.pl.pl Started -------<br />*** 2011-03-30 17:51:53 i10900.pl started ***<br />*** 2011-03-30 17:52:18 i10900.pl 0 - findStringOnPanel &quot;Compress successful&quot; Passed ***<br />*** 2011-03-30 17:52:21 i10900.pl 35 - navigate2Panel Passed ***<br />*** 2011-03-30 17:52:23 i10900.pl 39 - findStringOnPanel &quot;D0DPMAI0&quot; Passed ***<br />*** 2011-03-30 17:52:23 i10900.pl 41 - findStringOnPanel &quot;D0SPDIA1&quot; Passed ***<br />*** 2011-03-30 17:52:23 i10900.pl 43 - findStringOnPanel &quot;D0SPDIA8&quot; Passed ***<br />*** 2011-03-30 17:52:24 i10900.pl 47 - verifyPanel D0SPDIA1.txt Passed ***<br />*** 2011-03-30 17:52:26 i10900.pl 52 - Ended with a status of: Passed ***<br />Wed Mar 30 17:52:26 2011 ------- Test Case i10900.pl.pl Ended. Elasped Time: 0 Days. 0 Hours. 0 Min. 34 Sec. ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<tr>
+	<td>open</td>
+	<td>/map_site/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Trilog</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> All Regressions for Trilog* indicates a Point and Shoot (PnS) column. Release - Regression Regression Date/Time *Total *Passed *Failed % Passed OS - Version LPAR SubSytem *MAP Settings*FTP 490.1 - 2 2013-06-06 19 19 0 100% z/OS - 1.13 SYSQ N/A - Display FTP <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> MAP Settings for Trilog 490.1 Regression 2 usmghxjuliagr<br />: C:/eclipse-map/map/PHX/Trilog/run-settings.ini <br /><br /><br />KeyValue<br />AUTtritune<br />BuildInfoRelease R490 created on 12 Dec 2012<br />CurrentFolderNamecurrent_data<br />DifferencesFolderNameDifferences<br />ExpectedFolderNameexp_data<br />Hostsysq<br />IPHostnameMVSSYSQ<br />InitExpFile0<br />LPARtsoq<br />Logon_ProcedureQAMHPROC<br />MapLibPathc:/Workspace/jmap2_0/LIB<br />PCOM_Profile_Nameqa027a<br />Passwordmay013<br />RegressionID1<br />ReleaseR4.9.01<br />ResultsFolderNameResults<br />ServerIDQATUN49N<br />SessionIDT<br />TerminalEmulatorPComm<br />UserIDQa027a<br /><br />Suite Skip List<br />Suite Run List<br />Help <br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#table_cell_1 &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> Trilog 490.1 2 Release R490 created on 12 Dec 2012 * indicates a Point and Shoot (PnS) column.<br /> Elapsed SuiteScriptStatus Start Time End Time Run LogHistory Help help-0 Passed Thu Jun 6 15:22:57 2013 Thu Jun 6 15:24:14 2013 0 Day(s). 0 Hour(s). 1 Min(s). 17 Sec(s). View View Help help-1 Passed Thu Jun 6 15:24:14 2013 Thu Jun 6 15:24:26 2013 0 Day(s). 0 Hour(s). 0 Min(s). 12 Sec(s). View View Help help-2 Passed Thu Jun 6 15:24:26 2013 Thu Jun 6 15:24:41 2013 0 Day(s). 0 Hour(s). 0 Min(s). 15 Sec(s). View View Help help-3 Passed Thu Jun 6 15:24:41 2013 Thu Jun 6 15:24:51 2013 0 Day(s). 0 Hour(s). 0 Min(s). 10 Sec(s). View View Help help-4 Passed Thu Jun 6 15:24:51 2013 Thu Jun 6 15:25:03 2013 0 Day(s). 0 Hour(s). 0 Min(s). 12 Sec(s). View View Help help-5 Passed Wed Jan 23 10:41:14 2013 Empty -23 Day(s). -10 Hour(s). -41 Min(s). -14 Sec(s). View View Help help-a1 Passed Thu Jun 6 15:25:03 2013 Thu Jun 6 15:25:14 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View Help help-a2 Passed Thu Jun 6 15:25:14 2013 Thu Jun 6 15:25:27 2013 0 Day(s). 0 Hour(s). 0 Min(s). 13 Sec(s). View View Help help-a3 Passed Thu Jun 6 15:25:27 2013 Thu Jun 6 15:25:47 2013 0 Day(s). 0 Hour(s). 0 Min(s). 20 Sec(s). View View Help help-a4 Passed Thu Jun 6 15:25:47 2013 Thu Jun 6 15:25:58 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View Help help-a5 Passed Thu Jun 6 15:25:58 2013 Thu Jun 6 15:27:12 2013 0 Day(s). 0 Hour(s). 1 Min(s). 14 Sec(s). View View Help help-ai Passed Thu Jun 6 15:27:12 2013 Thu Jun 6 15:27:20 2013 0 Day(s). 0 Hour(s). 0 Min(s). 8 Sec(s). View View Help help-as Passed Thu Jun 6 15:27:20 2013 Thu Jun 6 15:27:32 2013 0 Day(s). 0 Hour(s). 0 Min(s). 12 Sec(s). View View Help help-au Passed Thu Jun 6 15:27:32 2013 Thu Jun 6 15:27:51 2013 0 Day(s). 0 Hour(s). 0 Min(s). 19 Sec(s). View View Help help-g Passed Thu Jun 6 15:27:51 2013 Thu Jun 6 15:27:59 2013 0 Day(s). 0 Hour(s). 0 Min(s). 8 Sec(s). View View Help help-m Passed Thu Jun 6 15:27:59 2013 Thu Jun 6 15:28:10 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View Help help-menu Passed Thu Jun 6 15:28:10 2013 Thu Jun 6 15:28:35 2013 0 Day(s). 0 Hour(s). 0 Min(s). 25 Sec(s). View View Help help-s Passed Thu Jun 6 15:28:35 2013 Thu Jun 6 15:28:46 2013 0 Day(s). 0 Hour(s). 0 Min(s). 11 Sec(s). View View Help help-t Passed Thu Jun 6 15:28:46 2013 Thu Jun 6 15:29:33 2013 0 Day(s). 0 Hour(s). 0 Min(s). 47 Sec(s). View View <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> HELP-0 Run LogProductReleaseReg #SuiteBuildTrilog490.12HelpRelease R490 created on 12 Dec 2012 PASSEDRun Log for help-0 Thu Jun 6 15:22:57 2013 ------- Test Case help-0.pl.pl Started -------<br />*** 2013-06-06 15:22:58 'help-0.pl' started ***<br /><br /> T <br />*** 2013-06-06 15:23:24 'help-0.pl' 23 - navigate2Panel Passed ***<br />*** 2013-06-06 15:23:26 'help-0.pl' 27 - verifyPopup help1.txt Passed ***<br />*** 2013-06-06 15:23:27 'help-0.pl' 31 - verifyPopup Profile1.txt Passed ***<br />*** 2013-06-06 15:23:29 'help-0.pl' 35 - verifyPopup Profile1a.txt Passed ***<br />*** 2013-06-06 15:23:29 'help-0.pl' 40 - verifyPopup SERVERspace1.txt Passed ***<br />*** 2013-06-06 15:23:30 'help-0.pl' 45 - verifyPopup Invokemonitor.txt Passed ***<br />*** 2013-06-06 15:23:31 'help-0.pl' 50 - verifyPopup Batchreports.txt Passed ***<br />*** 2013-06-06 15:23:31 'help-0.pl' 55 - verifyPopup Confirmdeletes.txt Passed ***<br />*** 2013-06-06 15:23:32 'help-0.pl' 60 - verifyPopup Selectcommand.txt Passed ***<br />*** 2013-06-06 15:23:33 'help-0.pl' 65 - verifyPopup Monitordataset.txt Passed ***<br />*** 2013-06-06 15:23:33 'help-0.pl' 70 - verifyPopup Monitoring_Criteria.txt Passed ***<br />*** 2013-06-06 15:23:34 'help-0.pl' 74 - verifyPopup FIELDS1.txt Passed ***<br />*** 2013-06-06 15:23:36 'help-0.pl' 79 - verifyPopup DESC1.txt Passed ***<br />*** 2013-06-06 15:23:37 'help-0.pl' 84 - verifyPopup Tracksprimary.txt Passed ***<br />*** 2013-06-06 15:23:37 'help-0.pl' 89 - verifyPopup Datasetgeneric.txt Passed ***<br />*** 2013-06-06 15:23:38 'help-0.pl' 94 - verifyPopup Trackssecondary.txt Passed ***<br />*** 2013-06-06 15:23:38 'help-0.pl' 99 - verifyPopup Volumeserial.txt Passed ***<br />*** 2013-06-06 15:23:39 'help-0.pl' 104 - verifyPopup smsdata.txt Passed ***<br />*** 2013-06-06 15:23:40 'help-0.pl' 109 - verifyPopup smsMGMt.txt Passed ***<br />*** 2013-06-06 15:23:40 'help-0.pl' 114 - verifyPopup SmsStor.txt Passed ***<br />*** 2013-06-06 15:23:41 'help-0.pl' 119 - verifyPopup Delaydetails.txt Passed ***<br />*** 2013-06-06 15:23:42 'help-0.pl' 124 - verifyPopup CodeViewmode.txt Passed ***<br />*** 2013-06-06 15:23:42 'help-0.pl' 129 - verifyPopup Autoscale.txt Passed ***<br />*** 2013-06-06 15:23:43 'help-0.pl' 134 - verifyPopup Instructiongroup.txt Passed ***<br />*** 2013-06-06 15:23:43 'help-0.pl' 139 - verifyPopup Columntotals.txt Passed ***<br />*** 2013-06-06 15:23:44 'help-0.pl' 144 - verifyPopup Statusupdate.txt Passed ***<br />*** 2013-06-06 15:23:44 'help-0.pl' 152 - verifyPopup Title.txt Passed ***<br />*** 2013-06-06 15:23:45 'help-0.pl' 157 - verifyPopup ActiveThres.txt Passed ***<br />*** 2013-06-06 15:23:46 'help-0.pl' 162 - verifyPopup DetailThres.txt Passed ***<br />*** 2013-06-06 15:23:46 'help-0.pl' 167 - verifyPopup WaitThresh.txt Passed ***<br />*** 2013-06-06 15:23:47 'help-0.pl' 172 - verifyPopup TransThresh.txt Passed ***<br />*** 2013-06-06 15:23:48 'help-0.pl' 177 - verifyPopup Analysis.txt Passed ***<br />*** 2013-06-06 15:23:49 'help-0.pl' 182 - verifyPopup MonitorHi.txt Passed ***<br />*** 2013-06-06 15:23:49 'help-0.pl' 187 - verifyPopup CodeView.txt Passed ***<br />*** 2013-06-06 15:23:50 'help-0.pl' 192 - verifyPopup TaskView.txt Passed ***<br />*** 2013-06-06 15:23:50 'help-0.pl' 197 - verifyPopup ModView.txt Passed ***<br />*** 2013-06-06 15:23:51 'help-0.pl' 202 - verifyPopup USSView.txt Passed ***<br />*** 2013-06-06 15:23:51 'help-0.pl' 207 - verifyPopup AnalysisSum.txt Passed ***<br />*** 2013-06-06 15:23:52 'help-0.pl' 212 - verifyPopup Summary_Threshold2.txt Passed ***<br />*** 2013-06-06 15:23:52 'help-0.pl' 217 - verifyPopup DelayView.txt Passed ***<br />*** 2013-06-06 15:23:53 'help-0.pl' 227 - verifyPopup TranView.txt Passed ***<br />*** 2013-06-06 15:23:54 'help-0.pl' 232 - verifyPopup PoolView.txt Passed ***<br />*** 2013-06-06 15:23:54 'help-0.pl' 238 - verifyPopup DB2View.txt Passed ***<br />*** 2013-06-06 15:23:55 'help-0.pl' 243 - verifyPopup JVMInfo.txt Passed ***<br />*** 2013-06-06 15:23:55 'help-0.pl' 248 - verifyPopup IMSTran.txt Passed ***<br />*** 2013-06-06 15:23:56 'help-0.pl' 253 - verifyPopup WebSphere.txt Passed ***<br />*** 2013-06-06 15:23:56 'help-0.pl' 258 - verifyPopup Delaydetailsa.txt Passed ***<br />*** 2013-06-06 15:23:57 'help-0.pl' 263 - verifyPopup Threshold.txt Passed ***<br />*** 2013-06-06 15:23:57 'help-0.pl' 268 - verifyPopup All-User-Top5.txt Passed ***<br />*** 2013-06-06 15:23:58 'help-0.pl' 273 - verifyPopup HistogramCsect1.txt Passed ***<br />*** 2013-06-06 15:23:58 'help-0.pl' 278 - verifyPopup HistogramCsect2.txt Passed ***<br />*** 2013-06-06 15:23:59 'help-0.pl' 283 - verifyPopup HistogramCsect3.txt Passed ***<br />*** 2013-06-06 15:23:59 'help-0.pl' 288 - verifyPopup HistogramCsect4.txt Passed ***<br />*** 2013-06-06 15:24:00 'help-0.pl' 293 - verifyPopup Csect1.txt Passed ***<br />*** 2013-06-06 15:24:01 'help-0.pl' 298 - verifyPopup Module.txt Passed ***<br />*** 2013-06-06 15:24:02 'help-0.pl' 303 - verifyPopup Pseudo.txt Passed ***<br />*** 2013-06-06 15:24:02 'help-0.pl' 308 - verifyPopup 4GL.txt Passed ***<br />*** 2013-06-06 15:24:03 'help-0.pl' 316 - verifyPopup Linklist.txt Passed ***<br />*** 2013-06-06 15:24:04 'help-0.pl' 321 - verifyPopup DB2CodeDetail.txt Passed ***<br />*** 2013-06-06 15:24:04 'help-0.pl' 326 - verifyPopup CodeDetail.txt Passed ***<br />*** 2013-06-06 15:24:05 'help-0.pl' 331 - verifyPopup DataDetail1.txt Passed ***<br />*** 2013-06-06 15:24:05 'help-0.pl' 336 - verifyPopup DelayDetail2.txt Passed ***<br />*** 2013-06-06 15:24:06 'help-0.pl' 341 - verifyPopup Trans1.txt Passed ***<br />*** 2013-06-06 15:24:06 'help-0.pl' 346 - verifyPopup Trans2.txt Passed ***<br />*** 2013-06-06 15:24:07 'help-0.pl' 351 - verifyPopup Trans3.txt Passed ***<br />*** 2013-06-06 15:24:07 'help-0.pl' 356 - verifyPopup Trans4.txt Passed ***<br />*** 2013-06-06 15:24:08 'help-0.pl' 361 - verifyPopup bATCHTracksPrimary.txt Passed ***<br />*** 2013-06-06 15:24:08 'help-0.pl' 366 - verifyPopup BATCHSecondary.txt Passed ***<br />*** 2013-06-06 15:24:08 'help-0.pl' 371 - verifyPopup BATCHVolumeSerial.txt Passed ***<br />*** 2013-06-06 15:24:09 'help-0.pl' 376 - verifyPopup BATCHuNIT.txt Passed ***<br />*** 2013-06-06 15:24:09 'help-0.pl' 381 - verifyPopup batchStorageClass.txt Passed ***<br />*** 2013-06-06 15:24:10 'help-0.pl' 386 - verifyPopup batchDataClass.txt Passed ***<br />*** 2013-06-06 15:24:10 'help-0.pl' 391 - verifyPopup batchManagementClass.txt Passed ***<br />*** 2013-06-06 15:24:11 'help-0.pl' 396 - verifyPopup Linesperpage.txt Passed ***<br />*** 2013-06-06 15:24:11 'help-0.pl' 401 - verifyPopup Column width.txt Passed ***<br />*** 2013-06-06 15:24:12 'help-0.pl' 406 - verifyPopup Destination.txt Passed ***<br />*** 2013-06-06 15:24:12 'help-0.pl' 411 - verifyPopup batchSysoutclass.txt Passed ***<br />*** 2013-06-06 15:24:13 'help-0.pl' 416 - verifyPopup batchSysoutform.txt Passed ***<br />*** 2013-06-06 15:24:14 'help-0.pl' 434 - Ended with a status of: Passed ***<br />Thu Jun 6 15:24:14 2013 ------- Test Case help-0.pl Ended. Elasped Time: 0 Day(s). 0 Hour(s). 1 Min(s). 17 Sec(s). ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Expected Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Expected Files List: <br /> 4GL.txt ActiveThres.txt All-User-Top5.txt Analysis.txt AnalysisSum.txt Autoscale.txt Availableprimarycomma.txt Batch reports.txt batchDataClass.txt batchManagementClass.txt Batchreports.txt BATCHSecondary.txt batchStorageClass.txt batchSysoutclass.txt batchSysoutform.txt bATCHTracksPrimary.txt BATCHuNIT.txt BATCHVolumeSerial.txt CodeDetail.txt CodeView.txt CodeViewmode.txt Column width.txt Columntotals.txt Confirmdeletes.txt Csect1.txt DataDetaiL.txt DataDetail1.txt Datasetgeneric.txt DataView.txt DB2CodeDetail.txt DB2View.txt DelayDetail.txt DelayDetail2.txt Delaydetails.txt Delaydetailsa.txt DelayView.txt DESC1.txt Destination.txt DetailThres.txt FIELDS1.txt help1.txt HistogramCsect1.txt HistogramCsect2.txt HistogramCsect3.txt HistogramCsect4.txt IMSTran.txt InitialFieldSettings.txt Instructiongroup.txt Invokemonitor.txt JVMInfo.txt Linesperpage.txt Linklist.txt Module.txt ModView.txt Monitordataset.txt MonitorHi.txt Monitoring_Criteria.txt PoolView.txt Profile Parameters1.txt Profile1.txt Profile1a.txt Pseudo.txt ReportDetail.txt Selectcommand.txt ServerID.txt SERVERID1.txt SERVERspace1.txt smsdata.txt smsMGMt.txt SmsStor.txt Statusupdate.txt Summary_Threshold2.txt TaskView.txt Threshold.txt Title.txt Tracksprimary.txt Trackssecondary.txt Trans1.txt Trans2.txt Trans3.txt Trans4.txt TransThresh.txt TranView.txt USSView.txt Volumeserial.txt WaitThresh.txt WebSphere.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Current Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Current File List: <br /> 4GL.txt ActiveThres.txt All-User-Top5.txt Analysis.txt AnalysisSum.txt Autoscale.txt batchDataClass.txt batchManagementClass.txt Batchreports.txt BATCHSecondary.txt batchStorageClass.txt batchSysoutclass.txt batchSysoutform.txt bATCHTracksPrimary.txt BATCHuNIT.txt BATCHVolumeSerial.txt CodeDetail.txt CodeView.txt CodeViewmode.txt Column width.txt Columntotals.txt Confirmdeletes.txt Csect1.txt DataDetail1.txt Datasetgeneric.txt DB2CodeDetail.txt DB2View.txt DelayDetail2.txt Delaydetails.txt Delaydetailsa.txt DelayView.txt DESC1.txt Destination.txt DetailThres.txt FIELDS1.txt help1.txt HistogramCsect1.txt HistogramCsect2.txt HistogramCsect3.txt HistogramCsect4.txt IMSTran.txt Instructiongroup.txt Invokemonitor.txt JVMInfo.txt Linesperpage.txt Linklist.txt Module.txt ModView.txt Monitordataset.txt MonitorHi.txt Monitoring_Criteria.txt PoolView.txt Profile1.txt Profile1a.txt Pseudo.txt Selectcommand.txt SERVERspace1.txt smsdata.txt smsMGMt.txt SmsStor.txt Statusupdate.txt Summary_Threshold2.txt TaskView.txt Threshold.txt Title.txt Tracksprimary.txt Trackssecondary.txt Trans1.txt Trans2.txt Trans3.txt Trans4.txt TransThresh.txt TranView.txt USSView.txt Volumeserial.txt WaitThresh.txt WebSphere.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Difference Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Differences File List: <br /> 4GL.txt ActiveThres.txt All-User-Top5.txt Analysis.txt AnalysisSum.txt Autoscale.txt batchDataClass.txt batchManagementClass.txt Batchreports.txt BATCHSecondary.txt batchStorageClass.txt batchSysoutclass.txt batchSysoutform.txt bATCHTracksPrimary.txt BATCHuNIT.txt BATCHVolumeSerial.txt CodeDetail.txt CodeView.txt CodeViewmode.txt Column width.txt Columntotals.txt Confirmdeletes.txt Csect1.txt DataDetail1.txt Datasetgeneric.txt DB2CodeDetail.txt DB2View.txt DelayDetail2.txt Delaydetails.txt Delaydetailsa.txt DelayView.txt DESC1.txt Destination.txt DetailThres.txt FIELDS1.txt help1.txt HistogramCsect1.txt HistogramCsect2.txt HistogramCsect3.txt HistogramCsect4.txt IMSTran.txt Instructiongroup.txt Invokemonitor.txt JVMInfo.txt Linesperpage.txt Linklist.txt Module.txt ModView.txt Monitordataset.txt MonitorHi.txt Monitoring_Criteria.txt PoolView.txt Profile1.txt Profile1a.txt Pseudo.txt Selectcommand.txt SERVERspace1.txt smsdata.txt smsMGMt.txt SmsStor.txt Statusupdate.txt Summary_Threshold2.txt TaskView.txt Threshold.txt Title.txt Tracksprimary.txt Trackssecondary.txt Trans1.txt Trans2.txt Trans3.txt Trans4.txt TransThresh.txt TranView.txt USSView.txt Volumeserial.txt WaitThresh.txt WebSphere.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> * indicates a Point and Shoot (PnS) column.<br /> Elapsed SuiteScriptStatus Start Time End Time Run LogHistory <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<tr>
+	<td>open</td>
+	<td>/map_site/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ESW-SMARTFILE-MVS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> All Regressions for ESW-SMARTFILE-MVS* indicates a Point and Shoot (PnS) column. Release - Regression Regression Date/Time *Total *Passed *Failed % Passed OS - Version LPAR SubSytem *MAP Settings*FTP 811 - 6 2012-02-28 28 22 6 78% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 820 - 1 2012-03-01 28 26 2 92% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 811 - 2 2012-03-22 45 39 6 86% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP 820 - 2 2012-03-28 43 38 5 88% z/OS - 1.13 SYSQ DB2 - 10.1 Display FTP <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:MAP Results Server <br /> <br /> Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> ProductReleaseRegressionBuild Info ESW-SMARTFILE-MVS8116Release r811 created on 28 Feb 2012 at 13:56:50 * indicates a Point and Shoot (PnS) column.<br /> Suite% Passed*Total*Passed*FailedNotes Search-Options 89% 19 17 2 View-Edit 55% 9 5 4 <br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> ProductReleaseRegressionBuild Info ESW-SMARTFILE-MVS8116Release r811 created on 28 Feb 2012 at 13:56:50 Suite: Search-Options* indicates a Point and Shoot (PnS) column. *ScriptStatusStartEndElapsed*Run Log*History m2-r006 Passed Tue Feb 28 11:33:46 2012 Tue Feb 28 11:34:58 2012 View View m2-r008 Passed Tue Feb 28 12:47:30 2012 Tue Feb 28 12:48:12 2012 View View m2-r009 Passed Tue Feb 28 12:48:12 2012 Tue Feb 28 12:48:44 2012 View View m2-r010 Passed Tue Feb 28 12:48:44 2012 Tue Feb 28 12:49:17 2012 View View m2-r011 Passed Tue Feb 28 12:49:17 2012 Tue Feb 28 12:49:55 2012 View View m2-r015 Passed Tue Feb 28 12:49:55 2012 Tue Feb 28 12:51:33 2012 View View m2-r016 Passed Tue Feb 28 12:51:33 2012 Tue Feb 28 12:52:56 2012 View View m2-r018 Passed Tue Feb 28 12:52:56 2012 Tue Feb 28 12:55:57 2012 View View m2-r019 Passed Tue Feb 28 12:55:57 2012 Tue Feb 28 12:58:29 2012 View View m2-r020 Passed Tue Feb 28 12:58:29 2012 Tue Feb 28 12:59:32 2012 View View m2-r022 Passed Tue Feb 28 12:59:32 2012 Tue Feb 28 13:00:27 2012 View View m2-r023 Passed Tue Feb 28 13:00:27 2012 Tue Feb 28 13:02:15 2012 View View m2-r024 Passed Tue Feb 28 13:02:15 2012 Tue Feb 28 13:03:43 2012 View View m2-r031 Passed Tue Feb 28 13:03:43 2012 Tue Feb 28 13:04:21 2012 View View m2-r032 Passed Mon Feb 27 16:06:01 2012 Mon Feb 27 16:07:36 2012 View View m2-r034 Passed Tue Feb 28 13:04:21 2012 Tue Feb 28 13:05:50 2012 View View m2-r038 Passed Tue Feb 28 13:05:50 2012 Tue Feb 28 13:06:57 2012 View View m2-r087 Failed Tue Feb 28 11:50:37 2012 Tue Feb 28 11:50:49 2012 View View m2-r089 Failed Tue Feb 28 11:50:49 2012 Tue Feb 28 11:51:01 2012 View View <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> M2-R006 Run LogProductReleaseReg #SuiteBuildESW-SMARTFILE-MVS8116Search-OptionsRelease r811 created on 28 Feb 2012 at 13:56:50 PASSEDRun Log for m2-r006 Tue Feb 28 11:33:46 2012 ------- Test Case m2-r006.pl.pl Started -------<br />*** 2012-02-28 11:33:46 r006.pl started ***<br /><br /> T <br />*** 2012-02-28 11:34:11 r006.pl 42 - findStringOnPanel &quot;ISREDM01&quot; Passed ***<br />*** JOB SUBMITTED ***<br />*** JOB ENDED ***<br />*** 2012-02-28 11:34:20 r006.pl 50 - findStringOnPanel &quot;ISRTSO&quot; Passed ***<br />*** 2012-02-28 11:34:21 r006.pl 55 - findStringOnPanel &quot;SFMASRCH&quot; Passed ***<br />*** 2012-02-28 11:34:22 r006.pl 71 - verifyPanel SFMASRC5.txt Passed ***<br />*** 2012-02-28 11:34:23 r006.pl 75 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:26 r006.pl 89 - findStringOnPanel &quot;SELECTION CRITERIA SAVED&quot; Passed ***<br />*** 2012-02-28 11:34:27 r006.pl 93 - verifyPanel ISRBROBA.txt Passed ***<br />*** 2012-02-28 11:34:29 r006.pl 98 - verifyPanel ISRBROBA1.txt Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 119 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 125 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 127 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 128 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:34 r006.pl 133 - verifyPanel ISRBROBA2.txt Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 155 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 162 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 164 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 165 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:38 r006.pl 168 - verifyPanel ISRBROBA3.txt Passed ***<br />*** 2012-02-28 11:34:39 r006.pl 172 - findStringOnPanel &quot;SFMASRCH&quot; Passed ***<br />*** 2012-02-28 11:34:40 r006.pl 192 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 199 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 201 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 202 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 206 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:42 r006.pl 208 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:43 r006.pl 213 - verifyPanel ISRBROBA4.txt Passed ***<br />*** 2012-02-28 11:34:45 r006.pl 218 - verifyPanel ISRBROBA5.txt Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 239 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 242 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 244 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 245 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 249 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 251 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:49 r006.pl 256 - verifyPanel ISRBROBA6.txt Passed ***<br />*** 2012-02-28 11:34:53 r006.pl 284 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:53 r006.pl 286 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:55 r006.pl 291 - verifyPanel ISRBROBA7.txt Passed ***<br />*** 2012-02-28 11:34:56 r006.pl 296 - verifyPanel ISRBROBA8.txt Passed ***<br />*** 2012-02-28 11:34:57 r006.pl 299 - verifyPanel ISRBROBA9.txt Passed ***<br />*** 2012-02-28 11:34:58 r006.pl 303 - Ended with a status of: Passed ***<br />Tue Feb 28 11:34:58 2012 ------- Test Case m2-r006.pl Ended. Elasped Time: 0 Days. 0 Hours. 1 Min. 12 Sec. ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Expected Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Expected Files List: <br /> ISRBROBA.txt ISRBROBA1.txt ISRBROBA2.txt ISRBROBA3.txt ISRBROBA4.txt ISRBROBA5.txt ISRBROBA6.txt ISRBROBA7.txt ISRBROBA8.txt ISRBROBA9.txt SFMASRC5.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Current Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Current File List: <br /> ISRBROBA.txt ISRBROBA1.txt ISRBROBA2.txt ISRBROBA3.txt ISRBROBA4.txt ISRBROBA5.txt ISRBROBA6.txt ISRBROBA7.txt ISRBROBA8.txt ISRBROBA9.txt SFMASRC5.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Difference Files</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Differences File List: <br /> ISRBROBA.txt ISRBROBA1.txt ISRBROBA2.txt ISRBROBA3.txt ISRBROBA4.txt ISRBROBA5.txt ISRBROBA6.txt ISRBROBA7.txt ISRBROBA8.txt ISRBROBA9.txt SFMASRC5.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'View')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Home&nbsp;&nbsp;<br /> <br /> History List for: m2-r006 ScriptProductReleaseSuiteStartEndRun LogStatus m2-r006 ESW-SMARTFILE-MVS 811 Search-Options Tue Feb 28 11:33:46 2012 Tue Feb 28 11:34:58 2012 View Passed m2-r006 ESW-SMARTFILE-MVS 820 Search-Options Thu Mar 1 09:01:02 2012 Thu Mar 1 09:01:51 2012 View Passed m2-r006 ESW-SMARTFILE-MVS 811 Search-Options Thu Mar 22 16:01:05 2012 Thu Mar 22 16:02:16 2012 View Passed m2-r006 ESW-SMARTFILE-MVS 820 Search-Options Wed Mar 28 10:31:54 2012 Wed Mar 28 10:32:52 2012 View Passed <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Navigation Home Source Listing Run Log Test Artifacts: Expected Files Current Files Difference Files&nbsp;&nbsp;<br /> <br /> M2-R006 Run LogProductReleaseReg #SuiteBuildESW-SMARTFILE-MVS8116Search-OptionsRelease r811 created on 28 Feb 2012 at 13:56:50 PASSEDRun Log for m2-r006 Tue Feb 28 11:33:46 2012 ------- Test Case m2-r006.pl.pl Started -------<br />*** 2012-02-28 11:33:46 r006.pl started ***<br /><br /> T <br />*** 2012-02-28 11:34:11 r006.pl 42 - findStringOnPanel &quot;ISREDM01&quot; Passed ***<br />*** JOB SUBMITTED ***<br />*** JOB ENDED ***<br />*** 2012-02-28 11:34:20 r006.pl 50 - findStringOnPanel &quot;ISRTSO&quot; Passed ***<br />*** 2012-02-28 11:34:21 r006.pl 55 - findStringOnPanel &quot;SFMASRCH&quot; Passed ***<br />*** 2012-02-28 11:34:22 r006.pl 71 - verifyPanel SFMASRC5.txt Passed ***<br />*** 2012-02-28 11:34:23 r006.pl 75 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:26 r006.pl 89 - findStringOnPanel &quot;SELECTION CRITERIA SAVED&quot; Passed ***<br />*** 2012-02-28 11:34:27 r006.pl 93 - verifyPanel ISRBROBA.txt Passed ***<br />*** 2012-02-28 11:34:29 r006.pl 98 - verifyPanel ISRBROBA1.txt Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 119 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 125 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 127 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:31 r006.pl 128 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:34 r006.pl 133 - verifyPanel ISRBROBA2.txt Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 155 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 162 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 164 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:36 r006.pl 165 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:38 r006.pl 168 - verifyPanel ISRBROBA3.txt Passed ***<br />*** 2012-02-28 11:34:39 r006.pl 172 - findStringOnPanel &quot;SFMASRCH&quot; Passed ***<br />*** 2012-02-28 11:34:40 r006.pl 192 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 199 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 201 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 202 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:41 r006.pl 206 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:42 r006.pl 208 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:43 r006.pl 213 - verifyPanel ISRBROBA4.txt Passed ***<br />*** 2012-02-28 11:34:45 r006.pl 218 - verifyPanel ISRBROBA5.txt Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 239 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 242 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 244 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 245 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 249 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:47 r006.pl 251 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:49 r006.pl 256 - verifyPanel ISRBROBA6.txt Passed ***<br />*** 2012-02-28 11:34:53 r006.pl 284 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:53 r006.pl 286 - pressKeys &quot;&quot; Passed ***<br />*** 2012-02-28 11:34:55 r006.pl 291 - verifyPanel ISRBROBA7.txt Passed ***<br />*** 2012-02-28 11:34:56 r006.pl 296 - verifyPanel ISRBROBA8.txt Passed ***<br />*** 2012-02-28 11:34:57 r006.pl 299 - verifyPanel ISRBROBA9.txt Passed ***<br />*** 2012-02-28 11:34:58 r006.pl 303 - Ended with a status of: Passed ***<br />Tue Feb 28 11:34:58 2012 ------- Test Case m2-r006.pl Ended. Elasped Time: 0 Days. 0 Hours. 1 Min. 12 Sec. ------<br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Display</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Navigation Home Admin Product Regression Reports: ESW-SMARTFILE-DB2 ESW-SMARTFILE-MVS ESW-SMARTTEST INFO/X JCLprep PROJCL Trilog Trilog-Tritune&nbsp;&nbsp;<br /> <br /> MAP Settings for ESW-SMARTFILE-MVS 811 Regression 6 Configuration Settings<br /><br />KeyValue<br />AUTsmartFileMVS<br />BuildInfoRelease R310 created on 15 Jul 2011 at 11:25:50<br />CntlLibQAL.PHX.SFauto.CNTL<br />CurrentFolderNamecurrent_data<br />DB2AuthidXXXXXXX<br />DB2CollectionIDXXXXXXX<br />DB2DatabasenameXXXXXXX<br />DB2PlannameXXXXXXX<br />DB2SubsystemDAQQ<br />DataBase01<br />DeleteProfileCMDQAL.PHX.SFAUTO.CLIST(DELPROF)<br />DifferencesFolderNameDifferences<br />ExecQAL.PHX.SFM811.CLIST(ASGSF81A)<br />ExpectedFolderNameexp_data<br />Hostsysq<br />IPHostnameMVSSYSQ<br />InitExpFile0<br />IspflibISP<br />IspprofSYSQ.ISPF.ISPPROF<br />JobNameXXXXXXX<br />LPARtsoq<br />Logon_ProcedureQAPXMAP<br />MapLibPathc:/Workspace/jmap2_0/LIB<br />PCOM_Profile_NameQA027A<br />Passwordauto4<br />PcfileIDQAPHX6<br />RegressionID2<br />ResultsFolderNameResults<br />SessionIDT<br />TerminalEmulatorPComm<br />UserIDQAPHX4<br />db2verA<br />stogroup01<br /><br />Suite Skip List<br />ivp <br /><br />Suite Run List<br />Search-Options <br /><br />View-Edit <br /><br /> <br />&nbsp;&nbsp;<br /> <br /> ASG 2013 - all rights reserved.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+
+</body>
+</html>

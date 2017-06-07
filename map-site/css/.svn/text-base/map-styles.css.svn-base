@@ -1,0 +1,288 @@
+body {	
+	margin: 0;
+	padding: 0;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 100%;
+}
+p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	line-height: 1.5;
+	color: #333;
+	
+}
+div#outerContainer {
+	width: 850px;
+	margin: 0 auto;
+	background: #fff no-repeat;
+}
+#outerContainer a:link, #outerContainer a:visited {
+	text-decoration:none;
+	/* color:#b36b00; */ 
+	color:#0077BB; 
+}
+#outerContainer a:hover, #outerContainer a:active {
+	color:#566440;
+	border-bottom: 1px dashed #566440;
+}
+#red-text, #red-text a:link, #red-text a:visited {
+        font-size: 12px;
+        color: red; 
+}
+.display_table {     
+	width:  700px; 
+	border: 1px; 
+	color:  #0B0B61;
+	text-align:left;
+	font-size:16px;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+
+.bg-blue {
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 12px; 
+       /* background-color: #9ff; heavy blue */
+        background-color: #CFECEC;
+}
+.bg-green {
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 12px; 
+        /* background-color: #9f9; heavy green*/
+        background-color: #C3FDB8;
+        
+}
+.tableheading {
+        font-size: 12px; 
+        background-color: #819FF7;    
+}
+div#throbber {
+	position:center;
+	height:30px;
+	weidht:30px;
+	background-image:url(../images/throbber.gif); 
+}
+div#heading {
+    position:relative;
+	height:90px;
+	background-color: #CEE3F6;
+	/* background-image:url(../images/ASG-MAP-Banner1.jpg); */   
+   
+}
+
+div#heading h1 {
+	color:#1B3C9F;
+}
+
+div#heading h2 {
+	color:#666;
+}
+#mainMenu {
+	height:40px;
+	/* background: yellow; */
+	border-top:black 2px solid;
+}
+#mainMenu ul, #midBanner ul {
+	list-style:none; 
+	margin: 0;
+	padding: 0;
+}
+
+#mainMenu h1 {
+	/*color: #1B3C9F; ASG blue */
+	color: #666;
+    font-family:"Trebuchet MS", sans-serif;
+  
+}
+#mainMenu li, #midBanner li {
+	list-style:none; 
+	float:left;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#mainMenu li a:link, #mainMenu li a:visited{
+	font-family:"Trebuchet MS", sans-serif;
+	/*background-image:url(../images/right-side-tab.png); */
+	display:block;
+	text-decoration:none;
+	padding: 0 10px 0 10px;
+	margin-right:10px;
+	line-height:25px;
+	color:#1B3C9F;
+	border:none;
+	background: #BDBDBD;
+}
+
+
+/* ===== main content ===== */
+
+#content div#mainContent {
+	float:left;
+	width: 650px;
+	margin: 0;
+	padding: 0 15px;
+	
+}
+
+#mainContent h1, #mainContent h2, #mainContent h3, #mainContent h4 {
+	font-family:"Trebuchet MS", sans-serif;
+	background-color:#fff
+	
+}
+
+#mainContent h1 {
+	font-size: 1.6em;
+	font-weight: bold;
+	/* color: #1b9d95; */
+	color: #1B3C9F;
+	
+	margin: 10px 0 .4ex 0;
+	
+}
+
+#mainContent h2 {
+	font-size: 1.2em;
+	color: #3c3809;
+	margin: .4ex 0;
+	
+}
+
+#mainContent h4 {
+	font-size: 1.1em;
+	font-weight:bold;
+	color: #666;
+	margin: 1ex 0 -.2ex 0;
+}
+h4#failed {
+	color: #DB5A63;
+}
+h4#passed {
+	color: #71A66F;
+}
+
+#mainContent li {
+	
+	text-decoration:none;
+	list-style-image:url(../images/check.gif);
+	
+}
+	
+div#leftSideBar {
+	text-align:left;
+	background-color: #CEE3F6;
+	padding: 0px 15px 0px 0px;
+	width: 100px;
+	float: left;
+	border-radius: 10px;
+	overflow: hidden;
+	border-top:#bbb 1px solid; 
+	border-right:#bbb 1px solid; 
+/*	border-left:#bbb 1px solid; */
+	border-bottom:#bbb 1px solid; 
+	margin: 1ex; 
+	
+}
+#leftSideBar h1 {
+	font-size: 1em;
+	font-weight:bold;
+	color: #666;
+	margin: 1ex 0 -.2ex 0;
+	
+}
+#leftSideBar h2 {
+	font-size: .9em;
+	font-weight:bold;
+	color: #666;
+	margin: 2ex 0 -.2ex 0;
+	float: left;
+	padding: 0px 0px 10px 0px;
+	
+}
+#leftSideBar ul, #leftSideBar li {
+	list-style:none;
+	text-align:left;
+	text-decoration:none;
+	padding: 0px 5px 0px 0px;
+	font-size:12px;
+	margin:5px;
+}
+
+div#footer {
+	clear:both;
+	background: transparent;
+	margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: .75em;
+}
+
+div#footer p {
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: .75em;
+	color:#000;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+div#footer a {
+	color:#1b9d95;
+	text-decoration: none;
+}
+
+#loading {
+background:#000 url(images/Map-header-crop.gif) no-repeat center center; 
+/* background:#000 no-repeat center center; */
+height: 50px;
+width: 50px;
+position: fixed;
+left: 50%;
+top: 50%;
+margin: -25px 0 0 -25px;
+z-index: 1000;
+}
+
+/* progress bar css */
+#processing_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #669900;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#processing_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	background-color:#669900;
+	color: #FFF;
+	/*border: solid 1px #FFF;*/
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#processing_content {
+	text-align: center;
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#processing_message {
+	text-align:center;
+	vertical-align:middle;
+}
+/* ===== misc styles ===== */
+.clear { clear:both }
+/**/

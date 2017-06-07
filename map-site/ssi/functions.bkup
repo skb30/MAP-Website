@@ -1,0 +1,1419 @@
+<?php
+$debug = 0;
+
+		// var_dump($regressions);
+		// echo count($regressions) . "<br />";
+
+// This file is the place to store all basic PHP functions
+function mysql_prep($value) {
+	// allow for quotes in strings
+	$magic_quotes_active = get_magic_quotes_gpc();
+	$php_version = function_exists("mysql_real_escape_string");
+	if ($php_version) {
+		if ($magic_quotes_active) {
+			$value = stripslashes( $value );
+		}
+	} else {
+		if ( !$magic_quotes_active) {
+			$value = addslashes($value);
+		}
+	}
+	 
+	print "value: $value <br />";
+	return $value;
+}
+function confirm_query($result_set) {
+	if (!$result_set) {
+		die ("confirm_query - Database selection failed: " . mysql_error());
+	}
+
+}
+
+function get_menuItems($connection, $public) {
+
+	$query = "SELECT *
+	 	       FROM menuItems ";
+	if ($public) {
+		$query .= "WHERE visible = 1 ";
+	}
+	$query .= "ORDER BY position ASC";
+	//echo "get_menuItems sql: $query <br />";
+	$menuItemSet = mysql_query($query, $connection);
+	confirm_query($menuItemSet);
+	return $menuItemSet;
+}
+
+function get_pages_for_menuItems ($menuItem, $connection, $public) {
+	$query = "SELECT *
+	FROM pages WHERE menuItemID = {$menuItem["menuItemID"]} ";
+	/* if its public nav then check to see if visible is set before
+	 * displaying.
+	 */
+	if ($public) {
+		$query .= "AND visible = 1 ";
+	}
+
+	$query .= "ORDER BY position ASC";
+		
+	$pageSet = mysql_query($query, $connection);
+	//echo "pageSet: $query";
+	confirm_query($pageSet);
+	return $pageSet;
+}
+function get_pages_by_menuID ($menuItem, $connection) {
+	$query = "SELECT *
+	FROM pages WHERE menuItemID = $menuItem
+	ORDER BY position ASC";
+		
+	$pageSet = mysql_query($query, $connection);
+	//echo "pageSet: $query";
+	confirm_query($pageSet);
+	return $pageSet;
+}
+function isSeleted ($page, $selPage) {
+	if ($page == $selPage) {
+		$boldClass = "class=\"selected\"";
+	} else {
+		$boldClass = "";
+	}
+
+	return $boldClass;
+
+}
+
+function  get_menu_by_id($selMenu) {
+
+	$query  = "SELECT * ";
+	$query .= "FROM menuItems ";
+	$query .= "WHERE menuItemID= " . $selMenu . " ";
+	$query .= "LIMIT 1";
+
+	//echo "get_menu_by_id sql: $query<br />\n";
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return fales
+	if ($menu = mysql_fetch_array($resultSet)) {
+		return $menu;
+	}
+	else {
+		return NULL;
+	}
+
+}
+function createProductLinks (){
+	
+	global $debug;
+
+//	$query  = "SELECT name, productID ";
+	$query  = "SELECT DISTINCT name ";
+	$query .= "FROM product ";
+	$query .= "WHERE visible = 1 ORDER BY name ASC";
+   
+
+	//echo "get_products: $query<br />\n";
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+	
+    
+	if ($debug) {
+		echo "<ul><li> createProductLinks()</li></ul>\n";
+	}
+	$output  = "<ul>\n";
+	// each row
+	while ($product = mysql_fetch_array($resultSet)) {
+			
+		$output .= "<li><a href=\"all-regressions.php?product="
+		. urlencode ($product["name"]) . "&cmd=1" .
+				   "\"> {$product["name"]}
+		</a></li>\n";
+	}
+	$output .= "<li><a href=\"http://usmghcentosqa/map_site/\"> Production Site </a></li>";
+	$output .= "</ul>\n";
+	echo $output;
+}
+
+function getSuiteName ($suiteID){
+
+	$query  = "SELECT name ";
+	$query .= "FROM suite ";
+	$query .= "WHERE suiteID = '{$suiteID}' ";
+
+
+    global $debug;
+	if ($debug) {
+		echo "getSuiteName ($suiteID)</p><p>$query</p>\n";
+	}
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$suiteName = $row["name"];
+
+	if ($suiteName == '0E0') {
+			
+		echo "suiteName not found for suiteID $suiteID<br />";
+	}
+	return $suiteName;
+}
+function getRegressionName ($regressionID){
+
+	$query  = "SELECT name ";
+	$query .= "FROM regression ";
+	$query .= "WHERE regressionID = '{$regressionID}' ";
+
+    global $debug;
+	if ($debug) {
+		echo "<p>getRegressionName ($regressionID)</p><p>$query</p>\n";
+	}
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$regressionID = $row["name"];
+
+	if ($regressionID == '0E0') {
+			
+		echo "Regression Name not found for regressionID $regressionID<br />";
+	}
+	return $regressionID;
+}
+function getProductName ($productID){
+
+	$query  = "SELECT name ";
+	$query .= "FROM product ";
+	$query .= "WHERE productID = '{$productID}' ";
+
+
+    global $debug;
+	if ($debug) {
+		echo "<p>getProductName ($productID)</p><p>$query</p>\n";
+	}
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$productName = $row["name"];
+
+	if ($productName == '0E0') {
+			
+		echo "Product Name not found for product with ID:  $productID<br />";
+	}
+	return $productName;
+}
+
+function getRegressionID ($suiteID){
+	
+	global $debug;
+
+	$query  = "SELECT regressionID ";
+	$query .= "FROM suite ";
+	$query .= "WHERE suiteID = '{$suiteID}' ";
+	
+   global $debug;
+	if ($debug) {
+		echo "<p>getRegressionID ($suiteID)</p><p>$query</p>\n";
+	}
+
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$regressionID = $row["regressionID"];
+
+	if ($regressionID == '0E0') {
+			
+		echo "regressionID not found for $regressionID<br />";
+	}
+	return $regressionID;
+}
+function getRegressionIDByScriptID ($scriptID){
+    global $debug;
+	$query  = "SELECT regression.regressionID ";
+	$query .= "FROM suite, script, regression ";
+	$query .= "WHERE script.scriptID = '{$scriptID}' ";
+	$query .= "AND suite.suiteID = script.suiteID  ";
+	$query .= "AND suite.regressionID = regression.regressionID  ";
+     
+	if ($debug) {
+		echo "<p> getRegressionIDByScriptID ($scriptID)</p><p>$query</p>\n";
+	}
+	
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$regressionID = $row["regressionID"];
+
+	if ($regressionID == '0E0') {
+			
+		echo "regressionID not found for $regressionID<br />";
+	}
+	if ($debug) {
+		echo "<p> $regressionID = getRegressionIDByScriptID ($scriptID)</p>\n";
+	}
+	return $regressionID;
+}
+
+
+function getProductIDByScriptID ($scriptID){
+	global $debug;
+
+	$query .= "SELECT product.productID ";
+	$query .= "FROM   regression,  product, suite, script ";
+	$query .= "WHERE  regression.productID     = product.productID ";
+	$query .= "AND    regression.regressionID  = suite.regressionID ";
+    $query .= "AND    suite.suiteID            = script.suiteID ";
+	$query .= "AND    script.scriptID          = '{$scriptID}'";
+	if ($debug) {
+		echo "<p> getProductIDByScriptID ($scriptID)</p><p>$query</p>\n";
+	}
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$productID = $row["productID"];
+
+	if ($productID == '0E0') {
+			
+		echo "productID not found for release with ID of: $releaseID<br />";
+	}
+	return $productID;
+}
+function getProductIDByReg ($regID){
+	
+	
+	global $debug;
+
+	$query  = "SELECT product.productID ";
+	$query .= "FROM regression, product ";
+	$query .= "WHERE regression.productID = product.productID ";
+	$query .= "AND regression.regressionID = '{$regID}' ";
+	if ($debug) {
+		echo "<p> getProductIDByReg ($regID)</p><p>$query</p>\n";
+	}
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$productID = $row["productID"];
+
+	if ($productID == '0E0') {
+			
+		echo "productID not found for regression with ID of: $regID<br />";
+	}
+	return $productID;
+}
+function getSuiteIDByScriptID($scriptID) {
+	
+	global $debug;
+
+	
+	$query  = "SELECT suiteID ";
+	$query .= "FROM script ";
+	$query .= "WHERE scriptID = '{$scriptID}' ";
+	
+	if ($debug) {
+		echo "<p> getSuiteIDByScriptID($scriptID)</p><p>$query</p>\n";
+	}
+	$resultSet = executeQuery($query);
+	
+	
+	
+
+	// if no rows are returned, fetch_array will return false
+
+	// each row
+	$row = mysql_fetch_array($resultSet);
+	$suiteID = $row["suiteID"];
+
+	if ($suiteID == '0E0') {
+			
+		echo "suiteID not found in scritps table with a scriptID of: $scirptID<br />";
+	}
+	return $suiteID;
+}
+
+function executeQuery($query) {
+	global $debug;
+	if ($debug) {
+		echo "<p> executeQuery($query)</p>\n";
+	}
+	
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+	return $resultSet;
+	
+}
+
+
+function displayTextData ($id, $cmd, $type, $name) {
+
+	/*
+	 * This function will display the contents of a table column.
+	 * It is called by display-text-data.php and used to display
+	 * the RTS, run-log and script source
+	 */
+	
+	
+	global $debug;
+	if ($debug) {
+		echo "<p> displayTextData (id=$id, cmd=$cmd,  type=$type, name=$name) </p>\n";
+	}
+	
+	/* skip the heading if it's RTS display */
+	if ($cmd != 3 ) {
+		/* print the title for this page */
+		getTitleByScriptID ($id);
+	}
+	/* display the source file*/
+	if ($cmd == 1) {
+		$query .= "SELECT  source, name ";
+		$query .= "FROM   script ";
+		$query .= "WHERE  scriptID = {$id} ";
+	
+		
+		$resultSet = mysql_query($query);
+		if ($debug) {
+			echo "<br /> $query <br />";
+		}
+		confirm_query($resultSet);
+	
+		$row = mysql_fetch_array($resultSet);
+		$output  = "<h4>Source Display for {$row["name"]} </h4> \n";
+		$output .= "<pre> {$row["source"]} </pre>";
+    /* display the run log */
+	} elseif ($cmd == 2) {
+		$query .= "SELECT  log, name ";
+		$query .= "FROM   script ";
+		$query .= "WHERE  scriptID = {$id} ";
+	
+		//echo "<br /> $query <br />";
+		$resultSet = mysql_query($query);
+		confirm_query($resultSet);
+	
+		$row = mysql_fetch_array($resultSet);
+		$output  = "<h4>Run Log for {$row["name"]} </h4> \n";
+		$output .= "<pre> {$row["log"]} </pre>";
+	/* display the MAP Run Time Settings*/	
+	} elseif ($cmd == 3) {
+		$query .= "SELECT  regression.rts, regression.name AS REG, product.release AS REL, product.name AS PRD ";
+		$query .= "FROM   regression, product ";
+		$query .= "WHERE  regressionID = {$id} ";
+		$query .= "AND    regression.productID = product.productID ";
+	
+		//echo "<br /> $query <br />";
+		$resultSet = mysql_query($query);
+		confirm_query($resultSet);
+	
+		$row = mysql_fetch_array($resultSet);
+		$output  = "<h4>MAP Settings for  {$row["PRD"]} {$row[REL]} Regression {$row["REG"]} </h4> \n";
+		$output .= "<pre> {$row["rts"]} </pre>";
+	/* display the expected files */	
+	} elseif ($cmd == 4 ) {
+
+		if ($type == "list") {
+			
+			$query .= "SELECT  name, contents ";
+			$query .= "FROM   exp_files ";
+			$query .= "WHERE  scriptID = {$id} ";
+			$query .= "AND    name     = '{$name}' ";
+		
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet); 
+			$output  = "<h4>Expected file contents for $name</h4> \n";
+			while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<pre>{$row["contents"]}</pre>\n";
+			}	
+
+		// show the contents of the file selected	
+		} else {
+			
+			$query .= "SELECT  name ";
+			$query .= "FROM   exp_files ";
+			$query .= "WHERE  scriptID = {$id} ";
+		
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet); 
+			$output  = "<div id=\"tableBox\"><h4>Expected Files List: </h4><div id=\"tableCol1\"><br /> \n";
+			while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<a href=display-text-data.php?&cmd=4";
+				$output .= "&id=$id";
+				$output .= "&type=list";
+				$output .= "&name={$row["name"]}>";
+				$output .= "{$row["name"]} </a>\n";
+			}
+			$output .= "</div></div>";	
+		}
+	/* display the current files */	
+	} elseif ($cmd == 5) {
+		if ($type == "list") {
+			$query .= "SELECT  name, contents ";
+			$query .= "FROM   current ";
+			$query .= "WHERE  scriptID = {$id} ";
+			$query .= "AND    name     = '{$name}' ";
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet);
+			
+			$output  = "<h4>Current file contents for $name</h4> \n";
+			while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<pre>{$row["contents"]}</pre>\n";
+			}
+			
+		} else {
+			$query .= "SELECT  name, contents ";
+			$query .= "FROM   current ";
+			$query .= "WHERE  scriptID = {$id} ";
+		
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet); 
+			$output  = "<div id=\"tableBox\"><h4>Current File List: </h4><div id=\"tableCol1\"><br />\n";
+				while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<a href=display-text-data.php?&cmd=5";
+				$output .= "&id=$id";
+				$output .= "&type=list";
+				$output .= "&name={$row["name"]}>";
+				$output .= "{$row["name"]} </a>\n";
+			}
+			$output .= "</div></div>";		
+		}
+		
+	/* display the difference files */	
+	} elseif ($cmd == 6) {	
+		
+		
+			if ($type == "list") {
+			$query .= "SELECT  name, contents ";
+			$query .= "FROM   differences ";
+			$query .= "WHERE  scriptID = {$id} ";
+			$query .= "AND    name     = '{$name}' ";
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet);
+			
+			$output  = "<h4>Difference file contents for $name</h4> \n";
+			while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<pre>{$row["contents"]}</pre>\n";
+			}
+			
+		} else {
+			$query .= "SELECT  name, contents ";
+			$query .= "FROM   differences ";
+			$query .= "WHERE  scriptID = {$id} ";
+		
+			//echo "<br /> $query <br />";
+			$resultSet = mysql_query($query);
+			confirm_query($resultSet); 
+			$output  = "<div id=\"tableBox\"><h4>Differences File List: </h4><div id=\"tableCol1\"><br />\n";
+				while ($row = mysql_fetch_array($resultSet)) {	
+				$output .= "<a href=display-text-data.php?&cmd=6";
+				$output .= "&id=$id";
+				$output .= "&type=list";
+				$output .= "&name={$row["name"]}>";
+				$output .= "{$row["name"]} </a>\n";
+			}
+			$output .= "</div></div>";		
+		}
+					
+	} else {
+		echo "<p id=\"warning\">Unknown cmd of $cmd </p><br />";
+	}
+
+	echo $output;
+	
+}
+
+function createHistoryReport ($scriptName, $productName) {
+	/*
+	 * Report this history run of a script.
+	 */
+	
+	global $debug;
+
+	$query .= "SELECT script.scriptID, script.name AS script, script.start, script.end, script.elapsed, script.status, ";
+	$query .= "regression.name AS reg, suite.name AS suite, product.release AS rel , product.name AS product, regression.regressionID ";
+	$query .= "FROM   script, suite, regression,  product ";
+	$query .= "WHERE  script.suiteID       = suite.suiteID ";
+	$query .= "AND    suite.regressionID   = regression.regressionID ";
+	$query .= "AND    regression.productID = product.productID ";
+	$query .= "AND    script.name          = '{$scriptName}' ";
+	$query .= "AND    product.name         = '{$productName}' ORDER BY regression.start";
+
+	if ($debug) {
+		echo "<p>createHistoryReport(scriptName:$scriptName productName:$productName)</p><p>$query</p>";
+	}
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$output  = "<h1>History List for: $scriptName </h1> \n";
+	$output .= "\n<table id=\"display_table\">\n";
+	$output .= "<th>Script</th><th>Product</th><th>Release</th><th>Suite</th><th>Start</th><th>End</th><th>Run Log</th><th>Status</th>";
+	while ($row = mysql_fetch_array($resultSet)) {
+		$output .= "<tr>\n";
+
+		$output .= "<td><a href=\"display-text-data.php?cmd=1";
+		$output .= "&id={$row["scriptID"]}";
+		$output .= "\"> {$row["script"]} </a></td>\n";
+		$output .= "<td>{$row["product"]} </td>\n";
+		$output .= "<td>{$row["rel"]} </td>\n";
+		$output .= "<td>{$row["suite"]} </td>\n";
+		$output .= "<td>{$row["start"]} </td>\n";
+		$output .= "<td>{$row["end"]}</td>\n";
+		$output .= "<td><a href=\"display-text-data.php?cmd=2&id={$row["scriptID"]}\"\>View</a></td>\n";
+		$output .= "<td>{$row["status"]}</td>\n";
+		$output .= "</tr>\n";
+		$regID = $row["regressionID"];
+	}
+	$output .= "</table>\n";
+
+	$output .= "<pre> {$row["log"]} </pre>";
+	echo $output;
+	
+	return $regID;
+
+}
+
+function createSuiteReport($suiteID, $cmd) {
+	
+	global $debug;
+
+
+	/* get the summary info   */
+	$query .= "SELECT product.release AS REL, regression.name AS REG, regression.buildinfo, ";
+	$query .= "regression.regressionID AS REGID, product.name AS PRD, suite.name AS SUITE ";
+	$query .= "FROM   regression, product, suite ";
+	$query .= "WHERE  suite.suiteID           = '{$suiteID}' ";
+	$query .= "AND    regression.productID    = product.productID ";
+	$query .= "AND    regression.regressionID = suite.regressionID ";
+
+	if ($debug) {
+		echo "<br />createSuiteReport($suiteID, $cmd)<br />$query<br />\n";
+	}
+	 
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$title = mysql_fetch_assoc($resultSet);
+	$productName   = $title["PRD"];
+	$releaseName   = $title["REL"];
+	$regID         = $title["REGID"];
+	$regName       = $title["REG"];
+	$suiteName     = $title["SUITE"];
+	$buildInfo     = $title["buildinfo"];
+
+	$output .= "<h4>Product: $productName <br />Release: $releaseName <br />Regression: $regName<br />Suite: $suiteName<br />Build: $buildInfo</h4> \n";
+	$output .= "\n<table id=\"display_table\">\n";
+
+	/* add the suite colunm because we were called by the regression page. */
+	if ($cmd > 3) {
+		$output .= "<th>Suite</th>";
+	}
+
+	$output .= "<th>Script</th><th>Status</th><th>Start</th><th>End</th><th>Elapsed</th><th>Run Log</th><th>History</th>";
+
+	$query = "SELECT script.scriptID, script.name, script.start, script.end, ";
+	$query .= "script.elapsed, script.status, script.source, script.log ";
+
+	/*
+	 * if we're called from the regression page then we need to add the suite table
+	 * as the first column of the report.
+	 */
+
+	if ($cmd <= 3) {
+		$query  = "SELECT script.scriptID, script.name, script.start, script.end, ";
+		$query .= "script.elapsed, script.status, script.source, script.log ";
+		$query .= "FROM   script ";
+	} else {
+		$query = "SELECT suite.name AS Suite, script.scriptID, script.name, script.start, script.end, ";
+		$query .= "script.elapsed, script.status, script.source, script.log ";
+		$query .= "FROM   script, suites ";
+	}
+
+	/* page controller */
+	if       ($cmd == 1) {
+		$query .= "WHERE  script.suiteID           = '{$suiteID}' ";
+	} elseif ($cmd == 2) {
+		$query .= "WHERE  script.suiteID           = '{$suiteID}' ";
+		$query .= "AND    script.status            = 'passed' ";
+	} elseif ($cmd == 3) {
+		//echo "create failed link<br />";
+		$query .= "WHERE  script.suiteID           = '{$suiteID}' ";
+		$query .= "AND    script.status            = 'failed' ";
+	} elseif ($cmd == 4) {
+		//echo "create all passed <br />";
+		$query .= "WHERE  suites.regressionID       = '{$regID}' ";
+		$query .= "AND    script.suiteID           = suites.suiteID ";
+		$query .= "AND    script.status            = 'passed' ";
+	} elseif ($cmd == 5) {
+		//echo "create all failed<br />";
+		$query .= "WHERE  suites.regressionID       = '{$regID}' ";
+		$query .= "AND    script.suiteID           = suites.suiteID ";
+		$query .= "AND    script.status            = 'failed' ";
+	}
+	else {
+		echo "Unknown cmd: $cmd<br />";
+		return -1;
+	}
+	//echo "<br /> $query <br />";
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+
+	while ($row = mysql_fetch_array($resultSet)) {
+		$output .= "<tr>\n";
+		if ($cmd > 3) {
+			$output .= "<td>{$row["Suite"]} </td>\n";
+		}
+		$output .= "<td><a href=\"display-text-data.php?&cmd=1&id=";
+		$output .= "{$row["scriptID"]}";
+
+		$output .= "\"> {$row["name"]} </a></td>\n";
+		$output .= "<td>{$row["status"]} </td>\n";
+		$output .= "<td>{$row["start"]} </td>\n";
+		$output .= "<td>{$row["end"]}</td>\n";
+		$output .= "<td>{$row["elasped"]}</td>\n";
+		$output .= "<td><a href=\"display-text-data.php?&cmd=2&id={$row["scriptID"]}\"\>View</a></td>\n";
+		$output .= "<td><a href=\"history-report.php?&script={$row["name"]}&suiteID=$suiteID&product=$productName\"\>View</a></td>\n";
+		$output .= "</tr>\n";
+	}
+	$output .= "</table>\n";
+	echo $output;
+}
+
+function get_run_log ($product, $release, $regression, $suite, $script) {
+	$productuc = strtoupper($product);
+	$releaseuc = strtoupper($release);
+	$suiteuc   = strtoupper($suite);
+	$scriptuc  = strtoupper($script);
+	 
+	$output  = "<h4> $productuc $releaseuc Resgression $regression $suiteuc  $script Run Log Display </h4> \n";
+
+	$query .= "SELECT  script.log, script.name ";
+	$query .= "FROM   script, suites, regressions, releases, products ";
+	$query .= "WHERE  products.productID = releases.productID ";
+	$query .= "AND    regressions.regressionID = suites.regressionID ";
+	$query .= "AND    suites.suiteID = script.suiteID ";
+	$query .= "AND    products.name    = '{$product}' ";
+	$query .= "AND    releases.name    = '{$release}' ";
+	$query .= "AND    regressions.name = '{$regression}' ";
+	$query .= "AND    suites.name      = '{$suite}' ";
+	$query .= "AND    script.name     = '{$script}' ";
+
+	//echo "<br /> $query <br />";
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$regression = mysql_fetch_array($resultSet);
+	$output .= "<pre> {$regression["log"]} </pre>";
+	echo $output;
+
+}
+
+function get_suite ($product, $release, $regression, $suite) {
+	$productuc = strtoupper($product);
+	$releaseuc = strtoupper($release);
+	$suiteuc   = strtoupper($suite);
+	 
+	$output  = "<h4> $productuc $releaseuc Resgression $regression $suiteuc Scripts List </h4> \n";
+
+	$query .= "SELECT  script.name AS Script, script.start, script.end, script.status ";
+	$query .= "FROM   script, suites, regressions, releases, products ";
+	$query .= "WHERE  products.productID = releases.productID ";
+	$query .= "AND    regressions.regressionID = suites.regressionID ";
+	$query .= "AND    suites.suiteID = script.suiteID ";
+	$query .= "AND    products.name    = '{$product}' ";
+	$query .= "AND    releases.name    = '{$release}' ";
+	$query .= "AND    regressions.name = '{$regression}' ";
+	$query .= "AND    suites.name      = '{$suite}' ";
+
+	//echo "<br /> $query <br />";
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$output .= "\n<table id=\"display_table\">\n";
+	$output .= "<th>Script</th><th>Start</th><th>End</th><th>Passed</th>";
+
+	while ($regression = mysql_fetch_array($resultSet)) {
+		$output .= "<tr>\n";
+		$output .= "<td id=\"table_cell_1\" scope=\"row\"><a href=\"content.php?page="
+		. urlencode ($regression["Script"])
+		. "\"> {$regression["Script"]} </a></td>\n";
+
+		$output .= "<td id=\"table_cell_1\" scope=\"row\">{$regression["start"]} </td>\n";
+		$output .= "<td id=\"table_cell_1\" scope=\"row\">{$regression["end"]} </td>\n";
+		$output .= "<td id=\"table_cell_2\" scope=\"row\">{$regression["status"]} </td>\n";
+		$output .= "<td id=\"table_cell_1\" scope=\"row\"><a href=\"content.php?page="
+		. urlencode ($regression["status"])
+		. "\"> {$regression["status"]} </a></td>\n";
+		$output .= "</tr>\n";
+
+	}
+	$output .= "</table>\n";
+	echo $output;
+
+}
+function get_status_count ($regressionID, $type) {
+    global $debug;
+	$query .= "SELECT  COUNT(*) AS total ";
+	$query .= "FROM product, regression, suite, script ";
+	$query .= "WHERE product.productID = regression.productID ";
+	$query .= "AND regression.regressionID = suite.regressionID ";
+	$query .= "AND suite.suiteID = script.suiteID ";
+	$query .= "AND regression.regressionID = '{$regressionID}' ";
+	$query .= "AND script.status ='{$type}' ";
+
+
+	if ($debug) {
+		echo "<br />get_status_count ($regressionID, $type)<br />\n";
+		echo "$query<br /><br /><br />\n";
+	}
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	while ($row = mysql_fetch_array($resultSet)) {
+		$passed = $row["total"];
+	}
+
+	return $passed;
+}
+function getSuiteStatus ($suiteID, $type) {
+	 global $debug;
+	if ($type == "passed" || $type == "failed") {
+		 
+		$query  = "SELECT  COUNT(script.status) AS TOTAL  ";
+		$query .= "FROM   script ";
+		$query .= "WHERE  script.suiteID = '{$suiteID}'  ";
+		$query .= "AND script.status =  '{$type}' ";
+		$query .= "GROUP BY script.status";
+		if ($debug) {
+			echo "<br />getSuiteStatus ($suiteID, $type)<br />\n";
+			echo "$query<br /><br /><br />\n";
+		}
+		$resultSet = mysql_query($query);
+		confirm_query($resultSet);
+			
+		$row = mysql_fetch_assoc($resultSet);
+		$total        = $row["TOTAL"];
+
+	} else {
+		echo "<br /> getSuiteStatus has invalid type parameter of: $type <br />";
+		return -1;
+	}
+	if (empty($total)) { $total = 0; }
+	return $total;
+}
+function getStatusPercentage ($total, $div) {
+
+	/* returns the formated printable percentage */
+
+	if ($total == 0 || $div == 0) {
+		$percent_passed = 0;
+	} elseif ($total > 0  && $div > 0) {
+		$percent_passed = ($div / $total) * 100;
+		$percent_passed = sprintf("%2d",$percent_passed) . "%";
+	} else {
+		$percent_passed = ' ';
+	}
+	 
+	return $percent_passed;
+
+}
+
+
+function getTitleByScriptID ($scriptID) {
+	global $debug;
+
+
+	/* get the summary info   */
+	$query .= "SELECT product.release AS REL, regression.name AS REG, ";
+	$query .= "product.name AS PRD, product.productID, regression.buildinfo AS BUILD, suite.name AS SUITE, ";
+	$query .= "script.name AS SCRIPT, script.status AS STATUS ";
+	$query .= "FROM   regression, product, suite, script ";
+	$query .= "WHERE  regression.productID     = product.productID ";
+	$query .= "AND    regression.regressionID  = suite.regressionID ";
+    $query .= "AND    suite.suiteID            = script.suiteID ";
+	$query .= "AND    script.scriptID = '{$scriptID}'";
+
+	if ($debug) {
+		echo "getTitleByScriptID (id $scriptID)<br /><br />$query<br />\n";
+	}
+	 
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$title = mysql_fetch_assoc($resultSet);
+	$productName   = $title["PRD"];
+	$releaseName   = $title["REL"];
+	$regName       = $title["REG"];
+	$build         = $title["BUILD"];
+	$suite         = $title["SUITE"];
+	$script        = $title["SCRIPT"];
+	$status        = $title["STATUS"];
+	$productID     = $title["productID"];
+
+	echo "<h4>Product: $productName<br /> Release: $releaseName <br />Regression: $regName <br />Build: $build <br />Suite:  $suite<br />Script:  $script <br /></h4> \n";
+	$status = strtoupper($status);
+	if ($status == 'FAILED') {
+		echo "<h4 id=\"failed\"> $status</h4>";
+	} else {
+		echo "<h4 id=\"passed\"> $status</h4>";
+	}
+	return $productID;
+}
+function createSuitesByRegression ($regressionID) {
+	
+
+	global $debug;
+
+
+	/* get the summary info   */
+
+	$query .= "SELECT product.release AS REL, regression.name AS REG, ";
+	$query .= "product.name AS PRD, regression.buildinfo AS BUILD ";
+	$query .= "FROM   regression,  product ";
+	$query .= "WHERE  regression.productID     =  product.productID ";
+	$query .= "AND    regression.regressionID = '{$regressionID}'";
+
+	if ($debug) {
+		echo "<p>createSuitesByRegression (id $regressionID)</p><p>$query</p>\n";
+	}
+	 
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$title = mysql_fetch_assoc($resultSet);
+	$productName   = $title["PRD"];
+	$releaseName   = $title["REL"];
+	$regName       = $title["REG"];
+	$build         = $title["BUILD"];
+
+	$output  .= "<h4>$productName $releaseName $regName Regression on $build</h4> \n";
+
+
+	/* get detailed records */
+	$query  = "SELECT suite.suiteID, suite.name AS suite, COUNT(suite.name) ";
+	$query .= "AS NUM_OF_SCRIPTS ";
+	$query .= "FROM   script, suite ";
+	$query .= "WHERE  suite.regressionID = '{$regressionID}'  ";
+	$query .= "AND    script.suiteID = suite.suiteID  ";
+	$query .= "GROUP BY suite.name";
+
+	//echo "<br /> $query <br />";
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+	$output .= "<h4> Regression Totals go here </h4>";
+	$output .= "\n<table id=\"display_table\">\n";
+	$output .= "<th>Suite</th><th>% Passed</th><th>Total</th><th>Passed</th><th>Failed</th><th>Notes</th>";
+
+	while ($row = mysql_fetch_array($resultSet)) {
+		$passed  = getSuiteStatus ($row["suiteID"], 'passed');
+		$failed  = getSuiteStatus ($row["suiteID"], 'failed');
+		 
+		$percent_passed = getStatusPercentage ($row["NUM_OF_SCRIPTS"], $passed);
+		$output .= "<tr>\n";
+		$output .= "<td>{$row["suite"]} </td>\n";
+		$output .= "<td>$percent_passed </td>\n";
+		$output .= "<td><a href=\"suite-report.php?";
+		$output .= "suiteID=$regression{$row["suiteID"]}";
+		$output .= "&cmd=1\"> {$row["NUM_OF_SCRIPTS"]} </a></td>\n";
+		 
+		$output .= "<td><a href=\"suite-report.php?suiteID=$regression{$row["suiteID"]}&cmd=2\">";
+		$output .= "$passed</td></a>\n";
+		 
+		$output .= "<td><a href=\"suite-report.php?suiteID=$regression{$row["suiteID"]}&cmd=3\">";
+		$output .= "$failed</td></a>\n";
+			
+		$output .= "</tr>\n";
+	}
+	$output .= "</table>\n";
+	echo $output;
+}
+function createRegressionDetail($regID, $cmd) {
+	/*
+	 * This function create the details for a regression by product, release, regression.
+	 * It's contents are displayed on regression-report.php
+	 */
+	 
+	global $debug;
+
+	$query .= "SELECT product.release AS REL, regression.name AS REG, regression.buildinfo, ";
+	$query .= "regression.regressionID AS REGID, product.name AS PRD, suite.name AS SUITE, ";
+	$query .= "script.name AS Script, script.start, script.end, script.elapsed, script.status, ";
+	$query .= "script.scriptID ";
+	$query .= "FROM regression,  product, suite, script ";
+	$query .= "WHERE regression.productID  = product.productID ";
+	$query .= "AND regression.regressionID = suite.regressionID ";
+	$query .= "AND suite.suiteID           = script.suiteID ";
+	$query .= "AND regression.regressionID =  '{$regID}' ";
+
+	if ($cmd == 4) {
+		$query .= "AND script.status =  'passed' ";
+	}elseif ($cmd == 5) {
+		$query .= "AND script.status =  'failed' ";
+	}
+
+	if ($debug) {
+		echo "<br />createRegressionDetail(regID: $regID, cmd:$cmd )<br />$query <br />\n";
+	}
+
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$title = mysql_fetch_assoc($resultSet);
+	$productName   = $title["PRD"];
+	$releaseName   = $title["REL"];
+	$regID         = $title["REGID"];
+	$regName       = $title["REG"];
+	$suiteName     = $title["SUITE"];
+	$buildInfo     = $title["buildinfo"];
+
+
+	$output .= "<h3>$productName $releaseName $regName $buildInfo</h3> \n";
+
+	$output .= "\n<table id=\"display_table\">\n";
+
+	/* add the suite colunm because we were called by the regression page. */
+	if ($cmd > 1) {
+		$output .= "<th>Suite</th>";
+	}
+
+	$output .= "<th>Script</th><th>Status</th><th>  Start Time </th><th>End Time  </th><th>Elapsed</th><th>Run Log</th><th>History</th>";
+
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+	$output;
+	while ($row = mysql_fetch_array($resultSet)) {
+		$output .= "<tr>\n";
+		if ($cmd > 1) {
+			$output .= "<td>{$row["SUITE"]} </td>\n";
+		}
+
+		$output .= "<td><a href=\"display-text-data.php?";
+		$output .= "cmd=1&id={$row["scriptID"]}";
+	  
+		$output .= "\"> {$row["Script"]} </a></td>\n";
+		$output .= "<td>{$row["status"]} </td>\n";
+		$output .= "<td>{$row["start"]} </td>\n";
+		$output .= "<td>{$row["end"]}</td>\n";
+		$output .= "<td>{$row["elapsed"]}</td>\n";
+		$output .= "<td><a href=\"display-text-data.php?&cmd=2&id={$row["scriptID"]}\"\>View</a></td>\n";
+		$output .= "<td><a href=\"history-report.php?&script={$row["Script"]}&product=$productName\"\>View</a></td>\n";
+		$output .= "</tr>\n";
+	}
+
+	$output .= "</table>\n";
+	echo $output;
+}
+function createRegressionsReport ($productName, $cmd){
+	 
+	/*
+	 * This function creates a list of regressions that have been published
+	 * for a product. The report is displayed on all-regressions.php
+	 *
+	 * 2 SQL queries are issused. The first one is to get the title/product name
+	 * and the second is for the detail records per product regression
+	 */
+	 
+	/* get summary info for the titles */
+	global $debug;
+    
+    $query  = "SELECT name, productID ";
+	$query .= "FROM product ";
+	$query .= "WHERE visible = 1 AND name = '$productName' ORDER BY name ASC";
+	 
+//	$query  = "SELECT name ";
+//	$query .= "FROM product WHERE productID = $productID ";
+	if ($debug) {
+		echo "createRegressionsReport(product = $productName, cmd=$cmd)<br /><br />\n";
+		echo "$query<br /><br /><br />\n";
+	}
+
+	$resultSet = mysql_query($query);
+	confirm_query($resultSet);
+
+	$title = mysql_fetch_assoc($resultSet);
+	$productName   = $title["name"];
+	$output .= "<h4> All Regressions for $productName</h4>";
+	
+	$query  = "SELECT os.name AS OS, regression.regressionID, product.name AS PRD, product.release AS REL, site.name AS SITE,  ";
+	$query .= "os.version AS OSREL, lpar.name AS LPAR, subsystem.name AS SUB, subsystem.version AS SUBREL, regression.name AS REG,  ";
+	$query .= "regression.start, regression.buildinfo, regression.rts ";
+	$query .= "FROM product, regression, os, lpar, site,  subsystem  ";
+	$query .= "WHERE product.name = '{$productName}' ";
+	$query .= "AND   regression.productID = product.productID ";
+	$query .= "AND   regression.siteID = site.siteID ";
+	$query .= "AND   regression.osID = os.osID ";
+	$query .= "AND   regression.subsystemID = subsystem.subsystemID ";
+	$query .= "AND   regression.lparID = lpar.lparID ";
+	$query .= "ORDER BY regression.start ";
+
+    
+	if ($debug) {
+		echo "$query<br />\n";
+	}
+	
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	
+	/* setup the table/column headings */
+	$output  .= "\n<table id=\"display_table\">\n";
+	$output .= "<th>Release - Regression</th>\n<th>Regression Date/Time</th>\n<th>Total</th>\n<th>Passed</th>\n";
+	$output .= "<th>Failed</th>\n<th>% Passed</th>\n<th>OS - Version</th>\n<th>LPAR</th>\n<th>SubSytem</th>\n";
+	$output .= "<th>MAP Settings</th>";
+//	$output .= "<th>Build Info</th><th>MAP Settings</th>";
+	/* if no rows are returned, fetch_array will return fales */
+	while ($regression = mysql_fetch_array($resultSet)) {
+
+		$output .= "<tr>\n";
+		
+		$output .= "<td title='{$regression["buildinfo"]}' id='ballons'>{$regression["REL"]} - {$regression["REG"]} </td>\n";
+		$output .= "<td>{$regression["start"]} </td>\n";
+		$passed = get_status_count($regression["regressionID"], "passed");
+		$failed = get_status_count($regression["regressionID"], "failed");
+		
+		$total  = $passed + $failed;
+		$percent_passed = getStatusPercentage ($total, $passed);
+
+		$output .= "<td><a href=\"regression-report.php?regID="
+		. urlencode ($regression["regressionID"])
+		. "&cmd=$cmd\">$total</a></td>\n";
+		$output .= "<td><a href=\"regression-report.php?regID={$regression["regressionID"]}";
+		$output .= "&cmd=4\">";
+		$output .= "$passed</a></td>\n";
+
+		$output .= "<td><a href=\"regression-report.php?regID={$regression["regressionID"]}";
+		$output .= "&cmd=5\">";
+		$output .= "$failed</a></td>\n";
+
+		$output .= "<td>$percent_passed</td>\n";
+		
+		$output .= "<td>{$regression["OS"]} - {$regression["OSREL"]} </td>\n";
+		$output .= "<td>{$regression["LPAR"]} </td>\n";
+		$output .= "<td>{$regression["SUB"]} - {$regression["SUBREL"]} </td>\n";
+		//$output .= "<td title='{$regression["buildinfo"]}' id='ballons'><a href=#>Display</a></td>\n";
+		
+		//$output .= "<td>button</td>\n";
+		$output .= "<td id=\"rts\"><a href=\"display-text-data.php?id="
+		. $regression["regressionID"]
+		. "&cmd=3\"> Display </a></td>\n";
+		$output .= "</tr>\n";
+	}
+	$output .= "</table>\n";
+	
+	echo $output;
+}
+function  get_page_by_id($selPage) {
+	//echo "inside by_id: $selPage </ br>\n";
+	$query  = "SELECT * ";
+	$query .= "FROM pages ";
+	$query .= "WHERE pageID= " . $selPage . " ";
+	$query .= "LIMIT 1";
+	//echo "$query<br />";
+	$resultSet = mysql_query($query);
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return fales
+	if ($page = mysql_fetch_array($resultSet)) {
+		return $page;
+	}
+	else {
+		return NULL;
+	}
+
+}
+function find_selected_page($connection) {
+
+	/*
+	 * Uses the URL parms to query the DB and get the rows
+	 * for the selected menu or page items
+	 */
+
+	// make global so I don't have to return them.
+	global $selectedMenu;
+	global $selectedPage;
+		
+	// echo "Inside find_selected_page() <br />";
+	// grab the parms from the request
+	if(isset($_GET['menu'])) {
+		//echo "menu passed via GET<br />";
+		$selectedMenu = get_menu_by_id($_GET['menu']);
+		//var_dump($selectedMenu);
+		$selectedPage = set_default_page($selectedMenu['menuItemID'], $connection);
+	} elseif (isset($_GET['page'])) {
+		//echo "page passed via GET<br />";
+		$selectedPage = get_page_by_id($_GET['page']);
+		$selectedMenu = NULL;
+		// $selectedMenu = set_default_menu($_GET['page'], $connection);
+	} else {
+		//echo "nothing passed via GET<br />";
+		$selectedPage = NULL;
+		$selectedMenu = NULL;
+	}
+}
+
+function set_default_page($id, $connection) {
+	//echo "Inside set_default($id, $connection)<br />\n";
+	$pageSet = get_pages_by_menuID($id, $connection, true);
+	//var_dump($pageSet);
+	$first_page = mysql_fetch_array($pageSet);
+	if ($first_page) {
+		return $first_page;
+	} else {
+		NULL;
+	}
+
+}
+
+function set_default_menu($pageID, $connection) {
+	echo "Inside set_default_menu($pageID, $connection)<br />\n";
+	$menuID = get_menuID($pageID, $connection);
+	// $selectedMenu = get_menu_by_id($menuID);
+	//	 if ($selectedMenu) {
+	//	 	 echo "*** Selected Menu Set! ***\n";
+	//	 } else {
+	//	 	echo "+++  Failed to set Selected Menu! +++\n";
+	//	 }
+
+}
+
+function get_menuID($pageID) {
+	//echo "inside get_menuID ($pageID) \n";
+	$query  = "SELECT menuItemID FROM pages WHERE pageID = $pageID ";
+	$query .= "LIMIT 1";
+
+
+	$resultSet = mysql_query($query);
+
+	//echo "rs: $query<br />\n ";
+
+	confirm_query($resultSet);
+	// if no rows are returned, fetch_array will return fales
+
+	while ($row = mysql_fetch_array($resultSet, MYSQL_NUM) ) {
+		printf("ID: %s Name %s", $row[0], $row[1]);
+	}
+
+	//		if ($row = mysql_fetch_array($resultSet)) {
+	//
+	//			$count =  count($row);
+	//			echo "Number of elements: $count\n<br />";
+	//			foreach ($menus as $field) {
+	//					echo "*** $field ***<br \>\n";
+	//			}
+	//			//return $menu;
+	//		}
+	//		else {
+	//			return NULL;
+	//		}
+}
+
+function navigation($selectedMenu, $selectedPage, $connection, $public = false) {
+
+	// fetch the menuItems and their corresponding pages and build the left sidebar
+	$menuItemSet = get_menuItems($connection, $public);
+	//var_dump($menuItemSet);
+	// need to initialize $output before going into the loop otherwise things fail.
+	$output = "<ul>\n";
+
+	// ok, now let's process the rows one at a time
+	while ($menuItem = mysql_fetch_array($menuItemSet)) {
+
+		$bold = isSeleted ($selectedMenu["menuItemID"], $menuItem["menuItemID"]);
+		$output .=  "<li><a $bold href=\"edit-menu.php?menu=" .  urlencode($menuItem["menuItemID"]) . "\"> {$menuItem["menuName"]}</a></li>\n";
+		$pageSet = get_pages_for_menuItems($menuItem, $connection, $public);
+		$output .= "<ul>\n";
+		while ($page = mysql_fetch_array($pageSet)) {
+			$bold = isSeleted ($page["pageID"], $selectedPage["pageID"]);
+			$output .= "<li $bold><a href=\"content.php?page=" . urlencode ($page["pageID"]) . "\"> {$page["menuName"]}</a></li>\n";
+		}
+
+	}
+	//	$output .= "</ul>\n";
+	return $output;
+}
+
+function public_navigation($selectedMenu, $selectedPage, $connection, $public = true) {
+	// fetch the menuItems and their corresponding pages and build the left sidebar
+	$menuItemSet = get_menuItems($connection, $public);
+	//var_dump($menuItemSet);
+
+	$output = "<ul>\n";
+
+	// ok, now let's process the rows one at a time
+	while ($menuItem = mysql_fetch_array($menuItemSet)) {
+		$bold = isSeleted ($selectedMenu["menuItemID"], $menuItem["menuItemID"]);
+		$output .=  "<li><a $bold href=\"index.php?menu=" .  urlencode($menuItem["menuItemID"]) . "\"> {$menuItem["menuName"]} </a></li>\n";
+		$pageSet = get_pages_for_menuItems($menuItem, $connection, $public);
+
+			
+		if (isSeleted ($selectedMenu["menuItemID"], $menuItem["menuItemID"])) {
+			$output .= "<ul>\n";
+			while ($page = mysql_fetch_array($pageSet)) {
+				$bold = isSeleted ($page["pageID"], $selectedPage["pageID"]);
+				$output .= "<li $bold><a href=\"content.php?page=" . urlencode ($page["pageID"]) . "\"> {$page["menuName"]}</a></li>\n";
+			}
+			$output .= "</ul>\n";
+		}
+			
+			
+	}
+	$output .= "<li><a href=\"content.php?page=1\">ProJCL R310 Regression 1</a></li>\n";
+	$output .= "<li><a href=\"content.php?page=2\">ProJCL R310 Admin1</a></li>\n";
+	$output .= "</ul>\n";
+	return $output;
+}
+
+
+function map_page_navigation($selectedPage, $connection) {
+	// fetch the menuItems and their corresponding pages and build the left sidebar
+
+	//var_dump($menuItemSet);
+	$output = "<ul>\n";
+
+	// ok, now let's process the rows one at a time
+	while ($menuItem = mysql_fetch_array($menuItemSet)) {
+		$bold = isSeleted ($selectedMenu["menuItemID"], $menuItem["menuItemID"]);
+		$output .=  "<li><a $bold href=\"index.php?menu=" .  urlencode($menuItem["menuItemID"]) . "\"> {$menuItem["menuName"]} </a></li>\n";
+		$pageSet = get_pages_for_menuItems($menuItem, $connection, $public);
+
+			
+		if (isSeleted ($selectedMenu["menuItemID"], $menuItem["menuItemID"])) {
+			$output .= "<ul>\n";
+			while ($page = mysql_fetch_array($pageSet)) {
+				$bold = isSeleted ($page["pageID"], $selectedPage["pageID"]);
+				$output .= "<li $bold><a href=\"content.php?page=" . urlencode ($page["pageID"]) . "\"> {$page["menuName"]}</a></li>\n";
+			}
+			$output .= "</ul>\n";
+		}
+			
+			
+	}
+	$output .= "</ul>\n";
+	return $output;
+}
+
+function display_pages_by_menuID($menuID, $connection) {
+
+	//echo "display_pages_by_menuID($menuID) <br />\n";
+	$pageSet = get_pages_by_menuID($menuID, $connection);
+	//var_dump($pageSet);
+	$output .= "<ul>\n";
+
+	// build the menu pages for the selected menu
+	while ($page = mysql_fetch_array($pageSet)) {
+		$output .= "<li $bold><a href=\"index.php?page=" . urlencode ($page["pageID"]) . "\"> {$page["menuName"]}</a></li>\n";
+	}
+	$output .= "</ul>\n";
+	echo $output;
+}
+ 
+function redirect_to ($location = NULL) {
+	if ($location != NULL) {
+		header("Location: {$location}");
+		exit;
+	}
+}
+function verify_form_field ($label) {
+
+	// pull the content from the form
+	$content = $_POST[$label];
+
+	//print "printing content from verifyform: $content <br />\n";
+
+	if (!isset($content) || empty($content)) {
+		//append to the array
+		//print "adding $field to errors array <br />\n";
+		//$errors[] = $content;
+		return FALSE;
+	} else {
+		//print "$content is verifed! <br />\n";
+		return TRUE;
+	}
+}
+
+
+function verify_form_fields ($connection, $type) {
+	$errors = array();
+
+	if ($type == 'page') {
+		$required_fields = array('menu_name', 'position', 'visible', 'content');
+	} else {
+		$required_fields = array('menu_name', 'position', 'visible');
+	}
+
+	foreach ($required_fields as $fieldName) {
+		if (!isset($_POST[$fieldName]) || (empty($_POST[$fieldName])  && !is_numeric($_POST[$fieldName]))) {
+			$errors[] = $fieldName;
+		}
+	}
+
+
+	$fields_with_lengths = array('menu_name' => 30);
+	foreach ($fields_with_lengths as $fieldname => $maxlength) {
+		if (strlen(trim($_POST[$fieldname])) > $maxlength) {
+			$errors[] = $fieldname;
+		}
+	}
+
+	/* we got a clean form so let's do the UPDATE to the DB */
+	if (empty($errors)) {
+		/* passed via URL */
+		 	
+		/* passed via post */
+		$menu_name = $_POST['menu_name'];
+		$position  = $_POST['position'];
+		$visible   = $_POST['visible'];
+		$content   = $_POST['content'];
+			
+		$query = "UPDATE pages SET
+		menuName = '{$menu_name}',
+		position = {$position},
+		visible  = {$visible},
+		content  = '{$content}'
+		WHERE pageID = {$id}";
+		//echo "SQL: $query </ br>\n";
+		$results = mysql_query($query, $connection);
+			
+		/* determine if the query was able to update the row */
+		if (mysql_affected_rows() == 1) {
+			$message = "Update Successful.";
+		}
+		else {
+			$message = "Update Unsuccessful.";
+			$message .= "<br />" . mysql_error();
+			$message .= "<br /> sql query: $query";
+		}
+			
+	} else {
+		$message = "There were " . count($errors) . " error(s) in the form.\n";
+	}
+}
+?>
